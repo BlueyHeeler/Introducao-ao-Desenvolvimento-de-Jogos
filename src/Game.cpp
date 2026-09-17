@@ -1,6 +1,5 @@
 #include "../include/Game.h"
 
-// Inicializando o ponteiro estático da instância
 Game* Game::instance = nullptr;
 
 Game& Game::GetInstance() 

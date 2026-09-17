@@ -245,12 +245,22 @@ dep/Sprite.d bin/Sprite.o: src/Sprite.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/16/bits/hash_bytes.h \
  /usr/include/c++/16/bits/basic_string.tcc include/Game.h include/State.h \
  include/Sprite.h include/Music.h /usr/include/SDL2/SDL_mixer.h \
- /usr/include/c++/16/iostream /usr/include/c++/16/ostream \
- /usr/include/c++/16/bits/ostream.h /usr/include/c++/16/ios \
- /usr/include/c++/16/exception /usr/include/c++/16/bits/exception_ptr.h \
- /usr/include/c++/16/bits/cxxabi_init_exception.h \
- /usr/include/c++/16/typeinfo /usr/include/c++/16/bits/nested_exception.h \
- /usr/include/c++/16/bits/ios_base.h /usr/include/c++/16/ext/atomicity.h \
+ include/GameObject.h include/Component.h include/Rect.h \
+ /usr/include/c++/16/vector /usr/include/c++/16/bits/stl_uninitialized.h \
+ /usr/include/c++/16/bits/stl_vector.h \
+ /usr/include/c++/16/bits/stl_bvector.h \
+ /usr/include/c++/16/bits/vector.tcc /usr/include/c++/16/memory \
+ /usr/include/c++/16/bits/stl_tempbuf.h \
+ /usr/include/c++/16/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/16/bits/align.h /usr/include/c++/16/bit \
+ /usr/include/c++/16/bits/uses_allocator.h \
+ /usr/include/c++/16/bits/unique_ptr.h /usr/include/c++/16/tuple \
+ /usr/include/c++/16/bits/invoke.h /usr/include/c++/16/bits/shared_ptr.h \
+ /usr/include/c++/16/bits/shared_ptr_base.h /usr/include/c++/16/typeinfo \
+ /usr/include/c++/16/bits/allocated_ptr.h \
+ /usr/include/c++/16/bits/refwrap.h \
+ /usr/include/c++/16/ext/aligned_buffer.h \
+ /usr/include/c++/16/ext/atomicity.h \
  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr.h \
  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr-default.h \
  /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
@@ -266,7 +276,16 @@ dep/Sprite.d bin/Sprite.o: src/Sprite.cpp /usr/include/stdc-predef.h \
  /usr/include/bits/types/struct_itimerspec.h /usr/include/bits/setjmp.h \
  /usr/include/bits/types/struct___jmp_buf_tag.h \
  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/atomic_word.h \
- /usr/include/sys/single_threaded.h \
+ /usr/include/sys/single_threaded.h /usr/include/c++/16/ext/concurrence.h \
+ /usr/include/c++/16/exception /usr/include/c++/16/bits/exception_ptr.h \
+ /usr/include/c++/16/bits/cxxabi_init_exception.h \
+ /usr/include/c++/16/bits/nested_exception.h \
+ /usr/include/c++/16/bits/shared_ptr_atomic.h \
+ /usr/include/c++/16/bits/atomic_base.h \
+ /usr/include/c++/16/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/16/backward/auto_ptr.h /usr/include/c++/16/iostream \
+ /usr/include/c++/16/ostream /usr/include/c++/16/bits/ostream.h \
+ /usr/include/c++/16/ios /usr/include/c++/16/bits/ios_base.h \
  /usr/include/c++/16/bits/locale_classes.h \
  /usr/include/c++/16/bits/functexcept.h \
  /usr/include/c++/16/bits/locale_classes.tcc \
@@ -619,16 +638,29 @@ include/State.h:
 include/Sprite.h:
 include/Music.h:
 /usr/include/SDL2/SDL_mixer.h:
-/usr/include/c++/16/iostream:
-/usr/include/c++/16/ostream:
-/usr/include/c++/16/bits/ostream.h:
-/usr/include/c++/16/ios:
-/usr/include/c++/16/exception:
-/usr/include/c++/16/bits/exception_ptr.h:
-/usr/include/c++/16/bits/cxxabi_init_exception.h:
+include/GameObject.h:
+include/Component.h:
+include/Rect.h:
+/usr/include/c++/16/vector:
+/usr/include/c++/16/bits/stl_uninitialized.h:
+/usr/include/c++/16/bits/stl_vector.h:
+/usr/include/c++/16/bits/stl_bvector.h:
+/usr/include/c++/16/bits/vector.tcc:
+/usr/include/c++/16/memory:
+/usr/include/c++/16/bits/stl_tempbuf.h:
+/usr/include/c++/16/bits/stl_raw_storage_iter.h:
+/usr/include/c++/16/bits/align.h:
+/usr/include/c++/16/bit:
+/usr/include/c++/16/bits/uses_allocator.h:
+/usr/include/c++/16/bits/unique_ptr.h:
+/usr/include/c++/16/tuple:
+/usr/include/c++/16/bits/invoke.h:
+/usr/include/c++/16/bits/shared_ptr.h:
+/usr/include/c++/16/bits/shared_ptr_base.h:
 /usr/include/c++/16/typeinfo:
-/usr/include/c++/16/bits/nested_exception.h:
-/usr/include/c++/16/bits/ios_base.h:
+/usr/include/c++/16/bits/allocated_ptr.h:
+/usr/include/c++/16/bits/refwrap.h:
+/usr/include/c++/16/ext/aligned_buffer.h:
 /usr/include/c++/16/ext/atomicity.h:
 /usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr.h:
 /usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr-default.h:
@@ -658,6 +690,20 @@ include/Music.h:
 /usr/include/bits/types/struct___jmp_buf_tag.h:
 /usr/include/c++/16/x86_64-pc-linux-gnu/bits/atomic_word.h:
 /usr/include/sys/single_threaded.h:
+/usr/include/c++/16/ext/concurrence.h:
+/usr/include/c++/16/exception:
+/usr/include/c++/16/bits/exception_ptr.h:
+/usr/include/c++/16/bits/cxxabi_init_exception.h:
+/usr/include/c++/16/bits/nested_exception.h:
+/usr/include/c++/16/bits/shared_ptr_atomic.h:
+/usr/include/c++/16/bits/atomic_base.h:
+/usr/include/c++/16/bits/atomic_lockfree_defines.h:
+/usr/include/c++/16/backward/auto_ptr.h:
+/usr/include/c++/16/iostream:
+/usr/include/c++/16/ostream:
+/usr/include/c++/16/bits/ostream.h:
+/usr/include/c++/16/ios:
+/usr/include/c++/16/bits/ios_base.h:
 /usr/include/c++/16/bits/locale_classes.h:
 /usr/include/c++/16/bits/functexcept.h:
 /usr/include/c++/16/bits/locale_classes.tcc:
