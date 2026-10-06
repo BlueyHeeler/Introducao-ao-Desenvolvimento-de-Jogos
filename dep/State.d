@@ -250,8 +250,8 @@ dep/State.d bin/State.o: src/State.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/16/vector /usr/include/c++/16/bits/stl_uninitialized.h \
  /usr/include/c++/16/bits/stl_vector.h \
  /usr/include/c++/16/bits/stl_bvector.h \
- /usr/include/c++/16/bits/vector.tcc /usr/include/c++/16/memory \
- /usr/include/c++/16/bits/stl_tempbuf.h \
+ /usr/include/c++/16/bits/vector.tcc src/../include/SpriteRenderer.h \
+ /usr/include/c++/16/memory /usr/include/c++/16/bits/stl_tempbuf.h \
  /usr/include/c++/16/bits/stl_raw_storage_iter.h \
  /usr/include/c++/16/bits/align.h /usr/include/c++/16/bit \
  /usr/include/c++/16/bits/uses_allocator.h \
@@ -625,6 +625,7 @@ src/../include/Rect.h:
 /usr/include/c++/16/bits/stl_vector.h:
 /usr/include/c++/16/bits/stl_bvector.h:
 /usr/include/c++/16/bits/vector.tcc:
+src/../include/SpriteRenderer.h:
 /usr/include/c++/16/memory:
 /usr/include/c++/16/bits/stl_tempbuf.h:
 /usr/include/c++/16/bits/stl_raw_storage_iter.h:

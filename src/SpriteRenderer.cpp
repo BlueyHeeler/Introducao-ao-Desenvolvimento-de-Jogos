@@ -27,7 +27,7 @@ void SpriteRenderer::SetFrameCount(int frameCountW, int frameCountH)
     sprite.SetFrameCount(frameCountW, frameCountH);
 }
 
-void SpriteRenderer::Update(float dt) 
+void SpriteRenderer::Update(float) 
 {
 }
 

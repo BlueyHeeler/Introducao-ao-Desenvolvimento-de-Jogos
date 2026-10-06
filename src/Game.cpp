@@ -1,98 +1,101 @@
-#include "../include/Game.h"
+#include "Game.h"
+#include "Resources.h"
+#include <stdexcept>
 
 Game* Game::instance = nullptr;
 
 Game& Game::GetInstance() 
 {
-    if (instance == nullptr) {
+    if (instance == nullptr)
         instance = new Game("Erick Taira - 222011525", 1200, 900); 
-    }
     return *instance;
 }
 
-Game::Game(std::string title, int width, int height) 
+Game::Game(std::string title, int width, int height)
+    : window(nullptr), renderer(nullptr), state(nullptr) 
 {
-    if (instance != nullptr) 
-    {
-        printf("Erro Lógico: O jogo já foi instanciado!\n");
-        return;
-    }
+    if (instance) 
+    	throw std::logic_error("Game ja foi instanciado.");
     instance = this;
-
-    if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_TIMER) != 0) 
-    {
-        printf("SDL_Init falhou! SDL_Error: %s\n", SDL_GetError());
-        return;
-    }
-
-    int imageFlags = IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF;
-    if ((IMG_Init(imageFlags) & imageFlags) != imageFlags) 
-    {
-        printf("IMG_Init falhou! SDL_Error: %s\n", SDL_GetError());
-    }
-
-    int mixFlags = MIX_INIT_OGG | MIX_INIT_MP3;
-    if ((Mix_Init(mixFlags) & mixFlags) != mixFlags) 
-    {
-        printf("Mix_Init falhou! SDL_Error: %s\n", SDL_GetError());
-    }
-
-    if (Mix_OpenAudio(MIX_DEFAULT_FREQUENCY, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 1024) != 0) 
-    {
-        printf("Mix_OpenAudio falhou! SDL_Error: %s\n", SDL_GetError());
-    }
-    
-    Mix_AllocateChannels(32);
-
-    window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, 0);
-    if (window == nullptr) 
-    {
-        printf("Falha na criação da janela! SDL_Error: %s\n", SDL_GetError());
-    } else {
+    try {
+        if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_TIMER) != 0)
+            throw std::runtime_error(SDL_GetError());
+        const int imageFlags = IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF;
+        
+        if ((IMG_Init(imageFlags) & imageFlags) != imageFlags)
+            throw std::runtime_error(IMG_GetError());
+        const int mixFlags = MIX_INIT_OGG | MIX_INIT_MP3;
+        
+        if ((Mix_Init(mixFlags) & mixFlags) != mixFlags)
+            throw std::runtime_error(Mix_GetError());
+        
+        if (Mix_OpenAudio(MIX_DEFAULT_FREQUENCY, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 1024) != 0)
+            throw std::runtime_error(Mix_GetError());
+        Mix_AllocateChannels(32);
+        window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_CENTERED,
+                                 SDL_WINDOWPOS_CENTERED, width, height, 0);
+        if (!window) 
+        	throw std::runtime_error(SDL_GetError());
         renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-        if (renderer == nullptr) {
-            printf("Falha na criação do Renderer! SDL Error: %s\n", SDL_GetError());
-        }
+        
+        if (!renderer) 
+        	throw std::runtime_error(SDL_GetError());
+        	
+        state = new State();
+        
+    } catch (...) {
+        Resources::ClearSounds();
+        Resources::ClearMusics();
+        Resources::ClearImages();
+        SDL_DestroyRenderer(renderer);
+        SDL_DestroyWindow(window);
+        Mix_CloseAudio();
+        Mix_Quit();
+        IMG_Quit();
+        SDL_Quit();
+        instance = nullptr;
+        throw;
     }
-
-    state = new State();
 }
 
 Game::~Game() 
 {
     delete state;
-    
+    Resources::ClearSounds();
+    Resources::ClearMusics();
+    Resources::ClearImages();
     Mix_CloseAudio();
     Mix_Quit();
-    
     IMG_Quit();
-    
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
-    
-    renderer = nullptr;
-    window = nullptr;
-    
     SDL_Quit();
+    instance = nullptr;
 }
 
 State& Game::GetState() 
 {
-    return *state;
+     return *state; 
 }
 
 SDL_Renderer* Game::GetRenderer() 
-{
-    return renderer;
+{ 
+    return renderer; 
 }
 
 void Game::Run() 
 {
-    while (!state->QuitRequested()) 
+    while (state && !state->QuitRequested()) 
     {
         state->Update(0.0f);
+        SDL_RenderClear(renderer);
         state->Render();
         SDL_RenderPresent(renderer);
         SDL_Delay(33);
     }
+    delete state;
+    state = nullptr;
+    Resources::ClearSounds();
+    Resources::ClearMusics();
+    Resources::ClearImages();
 }

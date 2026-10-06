@@ -1,107 +1,72 @@
 #include "Sprite.h"
-#include "Game.h" // Necessário para acessar Game::GetInstance().GetRenderer()
-#include <iostream>
+#include "Game.h"
+#include "Resources.h"
+#include <stdexcept>
 
-Sprite::Sprite() {
-    texture = nullptr;
-    frameCountW = 1;
-    frameCountH = 1;
-}
+Sprite::Sprite()
+    : texture(nullptr), width(0), height(0), frameCountW(1), frameCountH(1),
+      clipRect{0, 0, 0, 0} {}
 
-Sprite::Sprite(std::string file, int frameCountW, int frameCountH) 
+Sprite::Sprite(std::string file, int frameCountW, int frameCountH) : Sprite() 
 {
-    texture = nullptr;
-    this->frameCountW = frameCountW;
-    this->frameCountH = frameCountH;
+    SetFrameCount(frameCountW, frameCountH);
     Open(file);
 }
 
-Sprite::~Sprite() {
-    if (texture != nullptr) 
-    {
-        SDL_DestroyTexture(texture);
-    }
-}
+Sprite::~Sprite() {}
 
-void Sprite::Open(std::string file) 
-{
-    if (texture != nullptr) {
-        SDL_DestroyTexture(texture);
-        texture = nullptr;
-    }
-
-    SDL_Renderer* renderer = Game::GetInstance().GetRenderer();
-    texture = IMG_LoadTexture(renderer, file.c_str());
-
-    if (texture == nullptr) 
-    {
-        std::cout << "Falha ao carregar textura: " << SDL_GetError() << std::endl;
-        return;
-    }
-
+void Sprite::Open(std::string file)
+ {
+    texture = Resources::GetImage(file);
+    width = height = 0;
+    SetClip(0, 0, 0, 0);
+    if (!texture) return;
     SDL_QueryTexture(texture, nullptr, nullptr, &width, &height);
-
-    SetClip(0, 0, GetWidth(), GetHeight());
+    SetFrame(0);
 }
 
 void Sprite::SetClip(int x, int y, int w, int h) 
-{
-    clipRect.x = x;
-    clipRect.y = y;
-    clipRect.w = w;
-    clipRect.h = h;
+{ 
+    clipRect = {x, y, w, h};
 }
 
 void Sprite::Render(int x, int y, int w, int h) 
 {
-    SDL_Renderer* renderer = Game::GetInstance().GetRenderer();
-    SDL_Rect dstrect;
-    
-    dstrect.x = x;
-    dstrect.y = y;
-    dstrect.w = w;
-    dstrect.h = h;
-    SDL_RenderCopy(renderer, texture, &clipRect, &dstrect);
+    if (!texture || w <= 0 || h <= 0) 
+        return;
+    SDL_Rect destination{x, y, w, h};
+    SDL_RenderCopy(Game::GetInstance().GetRenderer(), texture, &clipRect, &destination);
 }
 
 int Sprite::GetWidth() 
-{
-    return width / frameCountW;
+{ 
+    return width / frameCountW; 
 }
 
 int Sprite::GetHeight() 
-{
-    return height / frameCountH;
+{ 
+    return height / frameCountH; 
 }
 
 bool Sprite::IsOpen() 
-{
-    return texture != nullptr;
+{ 
+    return texture != nullptr; 
 }
 
-void Sprite::SetFrameCount(int frameCountW, int frameCountH)
+void Sprite::SetFrameCount(int columns, int rows) 
 {
-	this->frameCountW = frameCountW;
-	this->frameCountH = frameCountH;
+    if (columns <= 0 || rows <= 0)
+        throw std::invalid_argument("Quantidade de frames deve ser positiva.");
+    frameCountW = columns;
+    frameCountH = rows;
+    if (texture) SetFrame(0);
 }
 
 void Sprite::SetFrame(int frame)
 {
-	int frameWidth = GetWidth();
-	int frameHeight = GetHeight();
-	
-	int x = (frame % frameCountW) * frameWidth;
-	int y = (frame / frameCountW) * frameHeight;
-	
-	SetClip(x, y, frameWidth, frameHeight);
+    if (!texture || frame < 0 || frame / frameCountW >= frameCountH) return;
+    const int frameWidth = GetWidth();
+    const int frameHeight = GetHeight();
+    SetClip((frame % frameCountW) * frameWidth,
+            (frame / frameCountW) * frameHeight, frameWidth, frameHeight);
 }
-
-
-
-
-
-
-
-
-
-

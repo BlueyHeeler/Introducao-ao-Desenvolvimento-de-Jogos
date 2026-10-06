@@ -7,9 +7,9 @@ GameObject::GameObject()
 
 GameObject::~GameObject()
 {
-	for(int i = components.size() - 1; i >= 0; i--)
+	for(std::size_t i = components.size(); i > 0; --i)
 	{
-		delete components[i];
+		delete components[i - 1];
 	}
 	
 	components.clear();

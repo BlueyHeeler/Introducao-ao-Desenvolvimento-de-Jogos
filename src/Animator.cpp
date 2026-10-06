@@ -11,7 +11,7 @@ Animator::Animator(GameObject& associated) : Component(associated)
     timeElapsed = 0;
 }
 
-void Animator::Update(float dt)
+void Animator::Update(float)
 {
     if (frameTime == 0) return;
 
