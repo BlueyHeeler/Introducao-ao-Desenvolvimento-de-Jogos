@@ -1,6 +1,8 @@
 #include "TileMap.h"
 #include "GameObject.h"
+#include "Camera.h"
 #include <algorithm>
+#include <cmath>
 #include <fstream>
 #include <iterator>
 #include <sstream>
@@ -21,7 +23,7 @@ void TileMap::Load(std::string file)
     	throw std::runtime_error("Nao foi possivel abrir o mapa: " + file);
     std::string text((std::istreambuf_iterator<char>(input)),
                      std::istreambuf_iterator<char>());
-    // O arquivo da disciplina separa os numeros com virgulas e linhas.
+                     
     std::replace(text.begin(), text.end(), ',', ' ');
     std::istringstream values(text);
     int width, height, depth;
@@ -47,6 +49,7 @@ void TileMap::Load(std::string file)
     mapWidth = width;
     mapHeight = height;
     mapDepth = depth;
+    parallax.assign(mapDepth, 1.0f);
     associated.box.w = static_cast<float>(mapWidth) * tileSet->GetTileWidth();
     associated.box.h = static_cast<float>(mapHeight) * tileSet->GetTileHeight();
 }
@@ -63,7 +66,6 @@ void TileMap::SetTileSet(TileSet* newTileSet) {
 int& TileMap::At(int x, int y, int z) {
     if (x < 0 || x >= mapWidth || y < 0 || y >= mapHeight || z < 0 || z >= mapDepth)
         throw std::out_of_range("Coordenada fora do TileMap.");
-    // x varia primeiro, depois y, depois a camada z.
     const std::size_t index = (static_cast<std::size_t>(z) * mapHeight + y) * mapWidth + x;
     return tileMatrix.at(index);
 }
@@ -77,16 +79,32 @@ void TileMap::Render()
 
 void TileMap::RenderLayer(int layer) 
 {
-    if (layer < 0 || layer >= mapDepth) return;
-    for (int y = 0; y < mapHeight; ++y) {
-        for (int x = 0; x < mapWidth; ++x) {
+    if (layer < 0 || layer >= mapDepth) 
+    	return;
+    // Sprite::Render subtrai Camera::pos uma vez. Esta compensacao deixa
+    // o deslocamento final igual a -Camera::pos * fator da camada.
+    const float offsetX = Camera::pos.x * (1.0f - parallax[layer]);
+    const float offsetY = Camera::pos.y * (1.0f - parallax[layer]);
+    for (int y = 0; y < mapHeight; ++y) 
+    {
+        for (int x = 0; x < mapWidth; ++x) 
+        {
             const int tile = At(x, y, layer);
-            if (tile == -1) continue; // -1 significa espaco vazio; 0 e um tile valido.
+            if (tile == -1) continue;
             tileSet->RenderTile(static_cast<unsigned>(tile),
-                associated.box.x + static_cast<float>(x) * tileSet->GetTileWidth(),
-                associated.box.y + static_cast<float>(y) * tileSet->GetTileHeight());
+                associated.box.x + static_cast<float>(x) * tileSet->GetTileWidth() + offsetX,
+                associated.box.y + static_cast<float>(y) * tileSet->GetTileHeight() + offsetY);
         }
     }
+}
+
+void TileMap::SetParallax(int layer, float factor)
+{
+    if (layer < 0 || layer >= mapDepth)
+        throw std::out_of_range("Camada fora do TileMap.");
+    if (!std::isfinite(factor) || factor < 0.0f)
+        throw std::invalid_argument("Fator de parallax deve ser finito e nao negativo.");
+    parallax[layer] = factor;
 }
 
 int TileMap::GetWidth() 

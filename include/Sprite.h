@@ -15,13 +15,15 @@ public:
     
     void Open(std::string file);
     void SetClip(int x, int y, int w, int h);
-    void Render(int x, int y, int w, int h);
+    void Render(float x, float y, int w, int h);
     void SetFrame(int frame);
     void SetFrameCount(int frameCountW, int frameCountH); 
     
     int GetWidth();
     int GetHeight();
     bool IsOpen();
+
+    bool cameraFollower;
 
 private:
     SDL_Texture* texture;

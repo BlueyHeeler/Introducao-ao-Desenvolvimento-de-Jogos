@@ -11,19 +11,20 @@ Animator::Animator(GameObject& associated) : Component(associated)
     timeElapsed = 0;
 }
 
-void Animator::Update(float)
+void Animator::Update(float dt)
 {
-    if (frameTime == 0) return;
+    if (frameTime <= 0.0f || dt <= 0.0f) return;
 
-    timeElapsed ++; 
+    timeElapsed += dt;
     
     bool frameChanged = false;
 
-    if (timeElapsed > frameTime)
+    while (timeElapsed >= frameTime)
     {
         currentFrame++;
         timeElapsed -= frameTime;
         frameChanged = true;
+        if (currentFrame > frameEnd) currentFrame = frameStart;
     }
 
     if (currentFrame > frameEnd)

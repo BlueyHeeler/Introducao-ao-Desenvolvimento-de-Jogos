@@ -4,6 +4,7 @@
 #include "Component.h"
 #include "GameObject.h"
 #include "Sound.h"
+#include "Timer.h"
 
 class Zombie : public Component 
 {
@@ -14,6 +15,10 @@ public:
     void Render() override;
 private:
     int hitpoints;
+    bool hit;
+    Timer hitTimer;
+    Timer deathTimer;
+    Sound hitSound;
     Sound deathSound;
 };
 #endif

@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "Resources.h"
+#include "InputManager.h"
 #include <stdexcept>
 
 Game* Game::instance = nullptr;
@@ -12,7 +13,7 @@ Game& Game::GetInstance()
 }
 
 Game::Game(std::string title, int width, int height)
-    : window(nullptr), renderer(nullptr), state(nullptr) 
+    : window(nullptr), renderer(nullptr), state(nullptr), frameStart(0), dt(0.0f)
 {
     if (instance) 
     	throw std::logic_error("Game ja foi instanciado.");
@@ -37,11 +38,15 @@ Game::Game(std::string title, int width, int height)
         if (!window) 
         	throw std::runtime_error(SDL_GetError());
         renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+        // Permite executar tambem sem aceleracao grafica (inclusive nos testes).
+        if (!renderer)
+            renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_SOFTWARE);
         
         if (!renderer) 
         	throw std::runtime_error(SDL_GetError());
         	
         state = new State();
+        frameStart = SDL_GetTicks();
         
     } catch (...) {
         Resources::ClearSounds();
@@ -85,9 +90,12 @@ SDL_Renderer* Game::GetRenderer()
 
 void Game::Run() 
 {
+    frameStart = SDL_GetTicks();
     while (state && !state->QuitRequested()) 
     {
-        state->Update(0.0f);
+        CalculateDeltaTime();
+        InputManager::GetInstance().Update();
+        state->Update(GetDeltaTime());
         SDL_RenderClear(renderer);
         state->Render();
         SDL_RenderPresent(renderer);
@@ -98,4 +106,17 @@ void Game::Run()
     Resources::ClearSounds();
     Resources::ClearMusics();
     Resources::ClearImages();
+}
+
+void Game::CalculateDeltaTime()
+{
+    const Uint32 now = SDL_GetTicks();
+    // A subtracao sem sinal tambem trata a volta do contador SDL_GetTicks.
+    dt = static_cast<float>(now - frameStart) / 1000.0f;
+    frameStart = now;
+}
+
+float Game::GetDeltaTime() const
+{
+    return dt;
 }

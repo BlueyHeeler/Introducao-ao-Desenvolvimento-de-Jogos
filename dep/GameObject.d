@@ -44,7 +44,8 @@ dep/GameObject.d bin/GameObject.o: src/GameObject.cpp \
  /usr/include/c++/16/bits/functional_hash.h \
  /usr/include/c++/16/bits/hash_bytes.h \
  /usr/include/c++/16/bits/range_access.h \
- /usr/include/c++/16/bits/erase_if.h /usr/include/c++/16/bits/vector.tcc
+ /usr/include/c++/16/bits/erase_if.h /usr/include/c++/16/bits/vector.tcc \
+ include/Camera.h include/Vec2.h
 /usr/include/stdc-predef.h:
 include/GameObject.h:
 include/Component.h:
@@ -104,3 +105,5 @@ include/Rect.h:
 /usr/include/c++/16/bits/range_access.h:
 /usr/include/c++/16/bits/erase_if.h:
 /usr/include/c++/16/bits/vector.tcc:
+include/Camera.h:
+include/Vec2.h:

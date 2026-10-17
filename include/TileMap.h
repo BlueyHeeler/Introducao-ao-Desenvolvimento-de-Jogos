@@ -18,12 +18,14 @@ public:
     void Update(float dt) override;
     void Render() override;
     void RenderLayer(int layer);
+    void SetParallax(int layer, float factor);
     int GetWidth();
     int GetHeight();
     int GetDepth();
 
 private:
     std::vector<int> tileMatrix;
+    std::vector<float> parallax;
     std::unique_ptr<TileSet> tileSet;
     int mapWidth;
     int mapHeight;

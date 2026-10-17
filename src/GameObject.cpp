@@ -1,4 +1,5 @@
 #include "GameObject.h"
+#include "Camera.h"
 
 GameObject::GameObject()
 {
@@ -7,6 +8,7 @@ GameObject::GameObject()
 
 GameObject::~GameObject()
 {
+	Camera::OnObjectDestroyed(this);
 	for(std::size_t i = components.size(); i > 0; --i)
 	{
 		delete components[i - 1];

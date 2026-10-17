@@ -25,7 +25,7 @@ void TileSet::RenderTile(unsigned index, float x, float y)
 {
     if (index >= static_cast<unsigned>(tileCount)) return;
     tileSet.SetFrame(static_cast<int>(index));
-    tileSet.Render(static_cast<int>(x), static_cast<int>(y), tileWidth, tileHeight);
+    tileSet.Render(x, y, tileWidth, tileHeight);
 }
 
 int TileSet::GetTileWidth() 

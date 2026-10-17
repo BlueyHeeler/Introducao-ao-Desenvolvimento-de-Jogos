@@ -40,3 +40,8 @@ void SpriteRenderer::SetFrame(int frame)
 {
     sprite.SetFrame(frame);
 }
+
+void SpriteRenderer::SetCameraFollower(bool follow)
+{
+    sprite.cameraFollower = follow;
+}

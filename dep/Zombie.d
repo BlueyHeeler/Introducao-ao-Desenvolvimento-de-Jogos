@@ -44,35 +44,25 @@ dep/Zombie.d bin/Zombie.o: src/Zombie.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/16/bits/hash_bytes.h \
  /usr/include/c++/16/bits/range_access.h \
  /usr/include/c++/16/bits/erase_if.h /usr/include/c++/16/bits/vector.tcc \
- include/SpriteRenderer.h /usr/include/c++/16/string \
- /usr/include/c++/16/bits/stringfwd.h \
- /usr/include/c++/16/bits/char_traits.h \
- /usr/include/c++/16/bits/postypes.h /usr/include/c++/16/cwchar \
- /usr/include/wchar.h /usr/include/bits/libc-header-start.h \
- /usr/include/bits/floatn.h /usr/include/bits/floatn-common.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stddef.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdarg.h \
- /usr/include/bits/wchar.h /usr/include/bits/types/wint_t.h \
- /usr/include/bits/types/mbstate_t.h \
- /usr/include/bits/types/__mbstate_t.h /usr/include/bits/types/__FILE.h \
- /usr/include/bits/types/FILE.h /usr/include/bits/types/locale_t.h \
- /usr/include/bits/types/__locale_t.h \
- /usr/include/c++/16/bits/localefwd.h \
- /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++locale.h \
- /usr/include/c++/16/clocale /usr/include/locale.h \
- /usr/include/bits/locale.h /usr/include/c++/16/iosfwd \
- /usr/include/c++/16/cctype /usr/include/ctype.h \
+ include/Sound.h include/SDL_include.h /usr/include/SDL2/SDL_mixer.h \
+ /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
+ /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
+ /usr/include/SDL2/close_code.h /usr/include/SDL2/SDL_config_unix.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/limits.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/libc-header-start.h \
+ /usr/include/bits/posix1_lim.h /usr/include/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/bits/pthread_stack_min-dynamic.h \
+ /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
+ /usr/include/bits/uio_lim.h /usr/include/sys/types.h \
  /usr/include/bits/types.h /usr/include/bits/typesizes.h \
- /usr/include/bits/time64.h /usr/include/bits/endian.h \
- /usr/include/bits/endianness.h /usr/include/c++/16/bits/ostream_insert.h \
- /usr/include/c++/16/bits/cxxabi_forced.h \
- /usr/include/c++/16/bits/basic_string.h \
- /usr/include/c++/16/ext/string_conversions.h /usr/include/c++/16/cstdlib \
- /usr/include/stdlib.h /usr/include/bits/waitflags.h \
- /usr/include/bits/waitstatus.h /usr/include/sys/types.h \
- /usr/include/bits/types/clock_t.h /usr/include/bits/types/clockid_t.h \
- /usr/include/bits/types/time_t.h /usr/include/bits/types/timer_t.h \
+ /usr/include/bits/time64.h /usr/include/bits/types/clock_t.h \
+ /usr/include/bits/types/clockid_t.h /usr/include/bits/types/time_t.h \
+ /usr/include/bits/types/timer_t.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stddef.h \
  /usr/include/bits/stdint-intn.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/endianness.h \
  /usr/include/bits/byteswap.h /usr/include/bits/uintn-identity.h \
  /usr/include/sys/select.h /usr/include/bits/select.h \
  /usr/include/bits/types/sigset_t.h /usr/include/bits/types/__sigset_t.h \
@@ -81,35 +71,26 @@ dep/Zombie.d bin/Zombie.o: src/Zombie.cpp /usr/include/stdc-predef.h \
  /usr/include/bits/pthreadtypes.h /usr/include/bits/thread-shared-types.h \
  /usr/include/bits/pthreadtypes-arch.h \
  /usr/include/bits/atomic_wide_counter.h /usr/include/bits/struct_mutex.h \
- /usr/include/bits/struct_rwlock.h /usr/include/alloca.h \
- /usr/include/bits/stdlib-float.h /usr/include/c++/16/bits/std_abs.h \
- /usr/include/c++/16/cstdio /usr/include/stdio.h \
- /usr/include/bits/types/__fpos_t.h /usr/include/bits/types/__fpos64_t.h \
- /usr/include/bits/types/struct_FILE.h \
+ /usr/include/bits/struct_rwlock.h /usr/include/stdio.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdarg.h \
+ /usr/include/bits/types/__fpos_t.h /usr/include/bits/types/__mbstate_t.h \
+ /usr/include/bits/types/__fpos64_t.h /usr/include/bits/types/__FILE.h \
+ /usr/include/bits/types/FILE.h /usr/include/bits/types/struct_FILE.h \
  /usr/include/bits/types/cookie_io_functions_t.h \
- /usr/include/bits/stdio_lim.h /usr/include/c++/16/cerrno \
- /usr/include/errno.h /usr/include/bits/errno.h \
- /usr/include/linux/errno.h /usr/include/asm/errno.h \
- /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /usr/include/bits/types/error_t.h /usr/include/c++/16/bits/charconv.h \
- /usr/include/c++/16/bits/basic_string.tcc include/Sprite.h \
- include/SDL_include.h /usr/include/SDL2/SDL.h \
- /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
- /usr/include/SDL2/SDL_config.h /usr/include/SDL2/SDL_platform.h \
- /usr/include/SDL2/begin_code.h /usr/include/SDL2/close_code.h \
- /usr/include/SDL2/SDL_config_unix.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/limits.h \
- /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/syslimits.h \
- /usr/include/limits.h /usr/include/bits/posix1_lim.h \
- /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
- /usr/include/bits/pthread_stack_min-dynamic.h \
- /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
- /usr/include/bits/uio_lim.h /usr/include/c++/16/stdlib.h \
- /usr/include/string.h /usr/include/strings.h /usr/include/inttypes.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/floatn.h \
+ /usr/include/bits/floatn-common.h /usr/include/c++/16/stdlib.h \
+ /usr/include/c++/16/cstdlib /usr/include/stdlib.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
+ /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
+ /usr/include/c++/16/bits/std_abs.h /usr/include/string.h \
+ /usr/include/strings.h /usr/include/wchar.h /usr/include/bits/wchar.h \
+ /usr/include/bits/types/wint_t.h /usr/include/bits/types/mbstate_t.h \
+ /usr/include/inttypes.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
- /usr/include/bits/stdint-least.h /usr/include/c++/16/math.h \
- /usr/include/c++/16/cmath /usr/include/math.h \
+ /usr/include/bits/stdint-least.h /usr/include/ctype.h \
+ /usr/include/c++/16/math.h /usr/include/c++/16/cmath /usr/include/math.h \
  /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
  /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
  /usr/include/bits/fp-fast.h /usr/include/bits/mathcalls-macros.h \
@@ -117,10 +98,29 @@ dep/Zombie.d bin/Zombie.o: src/Zombie.cpp /usr/include/stdc-predef.h \
  /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
  /usr/include/bits/iscanonical.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/float.h \
- /usr/include/SDL2/SDL_assert.h /usr/include/SDL2/SDL_atomic.h \
- /usr/include/SDL2/SDL_audio.h /usr/include/SDL2/SDL_error.h \
- /usr/include/SDL2/SDL_endian.h /usr/include/SDL2/SDL_mutex.h \
- /usr/include/SDL2/SDL_thread.h /usr/include/SDL2/SDL_rwops.h \
+ /usr/include/SDL2/SDL_rwops.h /usr/include/SDL2/SDL_error.h \
+ /usr/include/SDL2/SDL_audio.h /usr/include/SDL2/SDL_endian.h \
+ /usr/include/SDL2/SDL_mutex.h /usr/include/SDL2/SDL_thread.h \
+ /usr/include/SDL2/SDL_atomic.h /usr/include/SDL2/SDL_version.h \
+ /usr/include/c++/16/string /usr/include/c++/16/bits/stringfwd.h \
+ /usr/include/c++/16/bits/char_traits.h \
+ /usr/include/c++/16/bits/postypes.h /usr/include/c++/16/cwchar \
+ /usr/include/c++/16/bits/localefwd.h \
+ /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++locale.h \
+ /usr/include/c++/16/clocale /usr/include/locale.h \
+ /usr/include/bits/locale.h /usr/include/c++/16/iosfwd \
+ /usr/include/c++/16/cctype /usr/include/c++/16/bits/ostream_insert.h \
+ /usr/include/c++/16/bits/cxxabi_forced.h \
+ /usr/include/c++/16/bits/basic_string.h \
+ /usr/include/c++/16/ext/string_conversions.h /usr/include/c++/16/cstdio \
+ /usr/include/c++/16/cerrno /usr/include/errno.h \
+ /usr/include/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
+ /usr/include/asm-generic/errno-base.h /usr/include/bits/types/error_t.h \
+ /usr/include/c++/16/bits/charconv.h \
+ /usr/include/c++/16/bits/basic_string.tcc include/Timer.h \
+ include/SpriteRenderer.h include/Sprite.h /usr/include/SDL2/SDL.h \
+ /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_assert.h \
  /usr/include/SDL2/SDL_clipboard.h /usr/include/SDL2/SDL_cpuinfo.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/immintrin.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/x86gprintrin.h \
@@ -246,17 +246,17 @@ dep/Zombie.d bin/Zombie.o: src/Zombie.cpp /usr/include/stdc-predef.h \
  /usr/include/SDL2/SDL_metal.h /usr/include/SDL2/SDL_power.h \
  /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_shape.h \
  /usr/include/SDL2/SDL_system.h /usr/include/SDL2/SDL_timer.h \
- /usr/include/SDL2/SDL_version.h /usr/include/SDL2/SDL_locale.h \
- /usr/include/SDL2/SDL_misc.h /usr/include/SDL2/SDL_image.h \
- /usr/include/SDL2/SDL.h include/Animator.h include/Animation.h \
- /usr/include/c++/16/unordered_map \
+ /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
+ /usr/include/SDL2/SDL_image.h /usr/include/SDL2/SDL.h include/Animator.h \
+ include/Animation.h /usr/include/c++/16/unordered_map \
  /usr/include/c++/16/bits/unordered_map.h \
  /usr/include/c++/16/bits/hashtable.h \
  /usr/include/c++/16/bits/hashtable_policy.h /usr/include/c++/16/tuple \
  /usr/include/c++/16/bits/uses_allocator.h \
  /usr/include/c++/16/bits/invoke.h \
  /usr/include/c++/16/ext/aligned_buffer.h \
- /usr/include/c++/16/bits/enable_special_members.h
+ /usr/include/c++/16/bits/enable_special_members.h include/Camera.h \
+ include/Vec2.h include/InputManager.h
 /usr/include/stdc-predef.h:
 include/Zombie.h:
 include/Component.h:
@@ -317,54 +317,39 @@ include/Rect.h:
 /usr/include/c++/16/bits/range_access.h:
 /usr/include/c++/16/bits/erase_if.h:
 /usr/include/c++/16/bits/vector.tcc:
-include/SpriteRenderer.h:
-/usr/include/c++/16/string:
-/usr/include/c++/16/bits/stringfwd.h:
-/usr/include/c++/16/bits/char_traits.h:
-/usr/include/c++/16/bits/postypes.h:
-/usr/include/c++/16/cwchar:
-/usr/include/wchar.h:
+include/Sound.h:
+include/SDL_include.h:
+/usr/include/SDL2/SDL_mixer.h:
+/usr/include/SDL2/SDL_stdinc.h:
+/usr/include/SDL2/SDL_config.h:
+/usr/include/SDL2/SDL_platform.h:
+/usr/include/SDL2/begin_code.h:
+/usr/include/SDL2/close_code.h:
+/usr/include/SDL2/SDL_config_unix.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/limits.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/syslimits.h:
+/usr/include/limits.h:
 /usr/include/bits/libc-header-start.h:
-/usr/include/bits/floatn.h:
-/usr/include/bits/floatn-common.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stddef.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdarg.h:
-/usr/include/bits/wchar.h:
-/usr/include/bits/types/wint_t.h:
-/usr/include/bits/types/mbstate_t.h:
-/usr/include/bits/types/__mbstate_t.h:
-/usr/include/bits/types/__FILE.h:
-/usr/include/bits/types/FILE.h:
-/usr/include/bits/types/locale_t.h:
-/usr/include/bits/types/__locale_t.h:
-/usr/include/c++/16/bits/localefwd.h:
-/usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++locale.h:
-/usr/include/c++/16/clocale:
-/usr/include/locale.h:
-/usr/include/bits/locale.h:
-/usr/include/c++/16/iosfwd:
-/usr/include/c++/16/cctype:
-/usr/include/ctype.h:
+/usr/include/bits/posix1_lim.h:
+/usr/include/bits/local_lim.h:
+/usr/include/linux/limits.h:
+/usr/include/bits/pthread_stack_min-dynamic.h:
+/usr/include/bits/posix2_lim.h:
+/usr/include/bits/xopen_lim.h:
+/usr/include/bits/uio_lim.h:
+/usr/include/sys/types.h:
 /usr/include/bits/types.h:
 /usr/include/bits/typesizes.h:
 /usr/include/bits/time64.h:
-/usr/include/bits/endian.h:
-/usr/include/bits/endianness.h:
-/usr/include/c++/16/bits/ostream_insert.h:
-/usr/include/c++/16/bits/cxxabi_forced.h:
-/usr/include/c++/16/bits/basic_string.h:
-/usr/include/c++/16/ext/string_conversions.h:
-/usr/include/c++/16/cstdlib:
-/usr/include/stdlib.h:
-/usr/include/bits/waitflags.h:
-/usr/include/bits/waitstatus.h:
-/usr/include/sys/types.h:
 /usr/include/bits/types/clock_t.h:
 /usr/include/bits/types/clockid_t.h:
 /usr/include/bits/types/time_t.h:
 /usr/include/bits/types/timer_t.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stddef.h:
 /usr/include/bits/stdint-intn.h:
 /usr/include/endian.h:
+/usr/include/bits/endian.h:
+/usr/include/bits/endianness.h:
 /usr/include/bits/byteswap.h:
 /usr/include/bits/uintn-identity.h:
 /usr/include/sys/select.h:
@@ -379,54 +364,40 @@ include/SpriteRenderer.h:
 /usr/include/bits/atomic_wide_counter.h:
 /usr/include/bits/struct_mutex.h:
 /usr/include/bits/struct_rwlock.h:
-/usr/include/alloca.h:
-/usr/include/bits/stdlib-float.h:
-/usr/include/c++/16/bits/std_abs.h:
-/usr/include/c++/16/cstdio:
 /usr/include/stdio.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdarg.h:
 /usr/include/bits/types/__fpos_t.h:
+/usr/include/bits/types/__mbstate_t.h:
 /usr/include/bits/types/__fpos64_t.h:
+/usr/include/bits/types/__FILE.h:
+/usr/include/bits/types/FILE.h:
 /usr/include/bits/types/struct_FILE.h:
 /usr/include/bits/types/cookie_io_functions_t.h:
 /usr/include/bits/stdio_lim.h:
-/usr/include/c++/16/cerrno:
-/usr/include/errno.h:
-/usr/include/bits/errno.h:
-/usr/include/linux/errno.h:
-/usr/include/asm/errno.h:
-/usr/include/asm-generic/errno.h:
-/usr/include/asm-generic/errno-base.h:
-/usr/include/bits/types/error_t.h:
-/usr/include/c++/16/bits/charconv.h:
-/usr/include/c++/16/bits/basic_string.tcc:
-include/Sprite.h:
-include/SDL_include.h:
-/usr/include/SDL2/SDL.h:
-/usr/include/SDL2/SDL_main.h:
-/usr/include/SDL2/SDL_stdinc.h:
-/usr/include/SDL2/SDL_config.h:
-/usr/include/SDL2/SDL_platform.h:
-/usr/include/SDL2/begin_code.h:
-/usr/include/SDL2/close_code.h:
-/usr/include/SDL2/SDL_config_unix.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/limits.h:
-/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/syslimits.h:
-/usr/include/limits.h:
-/usr/include/bits/posix1_lim.h:
-/usr/include/bits/local_lim.h:
-/usr/include/linux/limits.h:
-/usr/include/bits/pthread_stack_min-dynamic.h:
-/usr/include/bits/posix2_lim.h:
-/usr/include/bits/xopen_lim.h:
-/usr/include/bits/uio_lim.h:
+/usr/include/bits/floatn.h:
+/usr/include/bits/floatn-common.h:
 /usr/include/c++/16/stdlib.h:
+/usr/include/c++/16/cstdlib:
+/usr/include/stdlib.h:
+/usr/include/bits/waitflags.h:
+/usr/include/bits/waitstatus.h:
+/usr/include/bits/types/locale_t.h:
+/usr/include/bits/types/__locale_t.h:
+/usr/include/alloca.h:
+/usr/include/bits/stdlib-float.h:
+/usr/include/c++/16/bits/std_abs.h:
 /usr/include/string.h:
 /usr/include/strings.h:
+/usr/include/wchar.h:
+/usr/include/bits/wchar.h:
+/usr/include/bits/types/wint_t.h:
+/usr/include/bits/types/mbstate_t.h:
 /usr/include/inttypes.h:
 /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdint.h:
 /usr/include/stdint.h:
 /usr/include/bits/stdint-uintn.h:
 /usr/include/bits/stdint-least.h:
+/usr/include/ctype.h:
 /usr/include/c++/16/math.h:
 /usr/include/c++/16/cmath:
 /usr/include/math.h:
@@ -441,14 +412,47 @@ include/SDL_include.h:
 /usr/include/bits/mathcalls-narrow.h:
 /usr/include/bits/iscanonical.h:
 /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/float.h:
-/usr/include/SDL2/SDL_assert.h:
-/usr/include/SDL2/SDL_atomic.h:
-/usr/include/SDL2/SDL_audio.h:
+/usr/include/SDL2/SDL_rwops.h:
 /usr/include/SDL2/SDL_error.h:
+/usr/include/SDL2/SDL_audio.h:
 /usr/include/SDL2/SDL_endian.h:
 /usr/include/SDL2/SDL_mutex.h:
 /usr/include/SDL2/SDL_thread.h:
-/usr/include/SDL2/SDL_rwops.h:
+/usr/include/SDL2/SDL_atomic.h:
+/usr/include/SDL2/SDL_version.h:
+/usr/include/c++/16/string:
+/usr/include/c++/16/bits/stringfwd.h:
+/usr/include/c++/16/bits/char_traits.h:
+/usr/include/c++/16/bits/postypes.h:
+/usr/include/c++/16/cwchar:
+/usr/include/c++/16/bits/localefwd.h:
+/usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++locale.h:
+/usr/include/c++/16/clocale:
+/usr/include/locale.h:
+/usr/include/bits/locale.h:
+/usr/include/c++/16/iosfwd:
+/usr/include/c++/16/cctype:
+/usr/include/c++/16/bits/ostream_insert.h:
+/usr/include/c++/16/bits/cxxabi_forced.h:
+/usr/include/c++/16/bits/basic_string.h:
+/usr/include/c++/16/ext/string_conversions.h:
+/usr/include/c++/16/cstdio:
+/usr/include/c++/16/cerrno:
+/usr/include/errno.h:
+/usr/include/bits/errno.h:
+/usr/include/linux/errno.h:
+/usr/include/asm/errno.h:
+/usr/include/asm-generic/errno.h:
+/usr/include/asm-generic/errno-base.h:
+/usr/include/bits/types/error_t.h:
+/usr/include/c++/16/bits/charconv.h:
+/usr/include/c++/16/bits/basic_string.tcc:
+include/Timer.h:
+include/SpriteRenderer.h:
+include/Sprite.h:
+/usr/include/SDL2/SDL.h:
+/usr/include/SDL2/SDL_main.h:
+/usr/include/SDL2/SDL_assert.h:
 /usr/include/SDL2/SDL_clipboard.h:
 /usr/include/SDL2/SDL_cpuinfo.h:
 /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/immintrin.h:
@@ -590,7 +594,6 @@ include/SDL_include.h:
 /usr/include/SDL2/SDL_shape.h:
 /usr/include/SDL2/SDL_system.h:
 /usr/include/SDL2/SDL_timer.h:
-/usr/include/SDL2/SDL_version.h:
 /usr/include/SDL2/SDL_locale.h:
 /usr/include/SDL2/SDL_misc.h:
 /usr/include/SDL2/SDL_image.h:
@@ -606,3 +609,6 @@ include/Animation.h:
 /usr/include/c++/16/bits/invoke.h:
 /usr/include/c++/16/ext/aligned_buffer.h:
 /usr/include/c++/16/bits/enable_special_members.h:
+include/Camera.h:
+include/Vec2.h:
+include/InputManager.h:

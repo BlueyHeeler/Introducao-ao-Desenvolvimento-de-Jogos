@@ -19,6 +19,7 @@ public:
 	void Render() override;
 	
 	void SetFrame(int frame);
+	void SetCameraFollower(bool follow);
 
 private:
 	Sprite sprite;

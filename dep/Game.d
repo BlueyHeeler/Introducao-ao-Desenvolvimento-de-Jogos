@@ -1,9 +1,9 @@
 dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
- src/../include/Game.h src/../include/SDL_include.h \
- /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
- /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
- /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
- /usr/include/SDL2/close_code.h /usr/include/SDL2/SDL_config_unix.h \
+ include/Game.h include/SDL_include.h /usr/include/SDL2/SDL.h \
+ /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
+ /usr/include/SDL2/SDL_config.h /usr/include/SDL2/SDL_platform.h \
+ /usr/include/SDL2/begin_code.h /usr/include/SDL2/close_code.h \
+ /usr/include/SDL2/SDL_config_unix.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/limits.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/syslimits.h \
  /usr/include/limits.h /usr/include/bits/libc-header-start.h \
@@ -243,12 +243,57 @@ dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/16/bits/charconv.h \
  /usr/include/c++/16/bits/functional_hash.h \
  /usr/include/c++/16/bits/hash_bytes.h \
- /usr/include/c++/16/bits/basic_string.tcc src/../include/State.h \
- src/../include/Sprite.h src/../include/Music.h \
- /usr/include/SDL2/SDL_mixer.h
+ /usr/include/c++/16/bits/basic_string.tcc include/State.h \
+ include/Music.h /usr/include/SDL2/SDL_mixer.h include/GameObject.h \
+ include/Component.h include/Rect.h /usr/include/c++/16/vector \
+ /usr/include/c++/16/bits/stl_uninitialized.h \
+ /usr/include/c++/16/bits/stl_vector.h \
+ /usr/include/c++/16/bits/stl_bvector.h \
+ /usr/include/c++/16/bits/vector.tcc /usr/include/c++/16/memory \
+ /usr/include/c++/16/bits/stl_tempbuf.h \
+ /usr/include/c++/16/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/16/bits/align.h /usr/include/c++/16/bit \
+ /usr/include/c++/16/bits/uses_allocator.h \
+ /usr/include/c++/16/bits/unique_ptr.h /usr/include/c++/16/tuple \
+ /usr/include/c++/16/bits/invoke.h /usr/include/c++/16/bits/shared_ptr.h \
+ /usr/include/c++/16/bits/shared_ptr_base.h /usr/include/c++/16/typeinfo \
+ /usr/include/c++/16/bits/allocated_ptr.h \
+ /usr/include/c++/16/bits/refwrap.h \
+ /usr/include/c++/16/ext/aligned_buffer.h \
+ /usr/include/c++/16/ext/atomicity.h \
+ /usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr.h \
+ /usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
+ /usr/include/linux/sched/types.h /usr/include/linux/types.h \
+ /usr/include/asm/types.h /usr/include/asm-generic/types.h \
+ /usr/include/asm-generic/int-ll64.h /usr/include/asm/bitsperlong.h \
+ /usr/include/asm-generic/bitsperlong.h /usr/include/linux/posix_types.h \
+ /usr/include/linux/stddef.h /usr/include/asm/posix_types.h \
+ /usr/include/asm/posix_types_64.h /usr/include/asm-generic/posix_types.h \
+ /usr/include/bits/types/struct_sched_param.h /usr/include/bits/cpu-set.h \
+ /usr/include/time.h /usr/include/bits/time.h /usr/include/bits/timex.h \
+ /usr/include/bits/types/struct_tm.h \
+ /usr/include/bits/types/struct_itimerspec.h /usr/include/bits/setjmp.h \
+ /usr/include/bits/types/struct___jmp_buf_tag.h \
+ /usr/include/c++/16/x86_64-pc-linux-gnu/bits/atomic_word.h \
+ /usr/include/sys/single_threaded.h /usr/include/c++/16/ext/concurrence.h \
+ /usr/include/c++/16/exception /usr/include/c++/16/bits/exception_ptr.h \
+ /usr/include/c++/16/bits/cxxabi_init_exception.h \
+ /usr/include/c++/16/bits/nested_exception.h \
+ /usr/include/c++/16/bits/shared_ptr_atomic.h \
+ /usr/include/c++/16/bits/atomic_base.h \
+ /usr/include/c++/16/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/16/backward/auto_ptr.h include/Resources.h \
+ /usr/include/c++/16/unordered_map \
+ /usr/include/c++/16/bits/unordered_map.h \
+ /usr/include/c++/16/bits/hashtable.h \
+ /usr/include/c++/16/bits/hashtable_policy.h \
+ /usr/include/c++/16/bits/enable_special_members.h include/InputManager.h \
+ /usr/include/c++/16/stdexcept \
+ /usr/include/c++/16/bits/stdexcept_except.h
 /usr/include/stdc-predef.h:
-src/../include/Game.h:
-src/../include/SDL_include.h:
+include/Game.h:
+include/SDL_include.h:
 /usr/include/SDL2/SDL.h:
 /usr/include/SDL2/SDL_main.h:
 /usr/include/SDL2/SDL_stdinc.h:
@@ -574,7 +619,76 @@ src/../include/SDL_include.h:
 /usr/include/c++/16/bits/functional_hash.h:
 /usr/include/c++/16/bits/hash_bytes.h:
 /usr/include/c++/16/bits/basic_string.tcc:
-src/../include/State.h:
-src/../include/Sprite.h:
-src/../include/Music.h:
+include/State.h:
+include/Music.h:
 /usr/include/SDL2/SDL_mixer.h:
+include/GameObject.h:
+include/Component.h:
+include/Rect.h:
+/usr/include/c++/16/vector:
+/usr/include/c++/16/bits/stl_uninitialized.h:
+/usr/include/c++/16/bits/stl_vector.h:
+/usr/include/c++/16/bits/stl_bvector.h:
+/usr/include/c++/16/bits/vector.tcc:
+/usr/include/c++/16/memory:
+/usr/include/c++/16/bits/stl_tempbuf.h:
+/usr/include/c++/16/bits/stl_raw_storage_iter.h:
+/usr/include/c++/16/bits/align.h:
+/usr/include/c++/16/bit:
+/usr/include/c++/16/bits/uses_allocator.h:
+/usr/include/c++/16/bits/unique_ptr.h:
+/usr/include/c++/16/tuple:
+/usr/include/c++/16/bits/invoke.h:
+/usr/include/c++/16/bits/shared_ptr.h:
+/usr/include/c++/16/bits/shared_ptr_base.h:
+/usr/include/c++/16/typeinfo:
+/usr/include/c++/16/bits/allocated_ptr.h:
+/usr/include/c++/16/bits/refwrap.h:
+/usr/include/c++/16/ext/aligned_buffer.h:
+/usr/include/c++/16/ext/atomicity.h:
+/usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr.h:
+/usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr-default.h:
+/usr/include/pthread.h:
+/usr/include/sched.h:
+/usr/include/bits/sched.h:
+/usr/include/linux/sched/types.h:
+/usr/include/linux/types.h:
+/usr/include/asm/types.h:
+/usr/include/asm-generic/types.h:
+/usr/include/asm-generic/int-ll64.h:
+/usr/include/asm/bitsperlong.h:
+/usr/include/asm-generic/bitsperlong.h:
+/usr/include/linux/posix_types.h:
+/usr/include/linux/stddef.h:
+/usr/include/asm/posix_types.h:
+/usr/include/asm/posix_types_64.h:
+/usr/include/asm-generic/posix_types.h:
+/usr/include/bits/types/struct_sched_param.h:
+/usr/include/bits/cpu-set.h:
+/usr/include/time.h:
+/usr/include/bits/time.h:
+/usr/include/bits/timex.h:
+/usr/include/bits/types/struct_tm.h:
+/usr/include/bits/types/struct_itimerspec.h:
+/usr/include/bits/setjmp.h:
+/usr/include/bits/types/struct___jmp_buf_tag.h:
+/usr/include/c++/16/x86_64-pc-linux-gnu/bits/atomic_word.h:
+/usr/include/sys/single_threaded.h:
+/usr/include/c++/16/ext/concurrence.h:
+/usr/include/c++/16/exception:
+/usr/include/c++/16/bits/exception_ptr.h:
+/usr/include/c++/16/bits/cxxabi_init_exception.h:
+/usr/include/c++/16/bits/nested_exception.h:
+/usr/include/c++/16/bits/shared_ptr_atomic.h:
+/usr/include/c++/16/bits/atomic_base.h:
+/usr/include/c++/16/bits/atomic_lockfree_defines.h:
+/usr/include/c++/16/backward/auto_ptr.h:
+include/Resources.h:
+/usr/include/c++/16/unordered_map:
+/usr/include/c++/16/bits/unordered_map.h:
+/usr/include/c++/16/bits/hashtable.h:
+/usr/include/c++/16/bits/hashtable_policy.h:
+/usr/include/c++/16/bits/enable_special_members.h:
+include/InputManager.h:
+/usr/include/c++/16/stdexcept:
+/usr/include/c++/16/bits/stdexcept_except.h:

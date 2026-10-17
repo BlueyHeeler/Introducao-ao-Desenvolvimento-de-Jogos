@@ -244,9 +244,9 @@ dep/main.d bin/main.o: src/main.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/16/bits/functional_hash.h \
  /usr/include/c++/16/bits/hash_bytes.h \
  /usr/include/c++/16/bits/basic_string.tcc include/State.h \
- include/Sprite.h include/Music.h /usr/include/SDL2/SDL_mixer.h \
- include/GameObject.h include/Component.h include/Rect.h \
- /usr/include/c++/16/vector /usr/include/c++/16/bits/stl_uninitialized.h \
+ include/Music.h /usr/include/SDL2/SDL_mixer.h include/GameObject.h \
+ include/Component.h include/Rect.h /usr/include/c++/16/vector \
+ /usr/include/c++/16/bits/stl_uninitialized.h \
  /usr/include/c++/16/bits/stl_vector.h \
  /usr/include/c++/16/bits/stl_bvector.h \
  /usr/include/c++/16/bits/vector.tcc /usr/include/c++/16/memory \
@@ -283,7 +283,28 @@ dep/main.d bin/main.o: src/main.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/16/bits/shared_ptr_atomic.h \
  /usr/include/c++/16/bits/atomic_base.h \
  /usr/include/c++/16/bits/atomic_lockfree_defines.h \
- /usr/include/c++/16/backward/auto_ptr.h
+ /usr/include/c++/16/backward/auto_ptr.h /usr/include/c++/16/iostream \
+ /usr/include/c++/16/ostream /usr/include/c++/16/bits/ostream.h \
+ /usr/include/c++/16/ios /usr/include/c++/16/bits/ios_base.h \
+ /usr/include/c++/16/bits/locale_classes.h \
+ /usr/include/c++/16/bits/functexcept.h \
+ /usr/include/c++/16/bits/locale_classes.tcc \
+ /usr/include/c++/16/system_error \
+ /usr/include/c++/16/x86_64-pc-linux-gnu/bits/error_constants.h \
+ /usr/include/c++/16/stdexcept \
+ /usr/include/c++/16/bits/stdexcept_except.h \
+ /usr/include/c++/16/streambuf /usr/include/c++/16/bits/streambuf.tcc \
+ /usr/include/c++/16/bits/basic_ios.h \
+ /usr/include/c++/16/bits/locale_facets.h /usr/include/c++/16/cwctype \
+ /usr/include/wctype.h /usr/include/bits/wctype-wchar.h \
+ /usr/include/c++/16/x86_64-pc-linux-gnu/bits/ctype_base.h \
+ /usr/include/c++/16/bits/streambuf_iterator.h \
+ /usr/include/c++/16/x86_64-pc-linux-gnu/bits/ctype_inline.h \
+ /usr/include/c++/16/bits/locale_facets.tcc \
+ /usr/include/c++/16/bits/basic_ios.tcc \
+ /usr/include/c++/16/bits/ostream_print.h \
+ /usr/include/c++/16/bits/ostream.tcc /usr/include/c++/16/istream \
+ /usr/include/c++/16/bits/istream.tcc
 /usr/include/stdc-predef.h:
 include/Game.h:
 include/SDL_include.h:
@@ -613,7 +634,6 @@ include/SDL_include.h:
 /usr/include/c++/16/bits/hash_bytes.h:
 /usr/include/c++/16/bits/basic_string.tcc:
 include/State.h:
-include/Sprite.h:
 include/Music.h:
 /usr/include/SDL2/SDL_mixer.h:
 include/GameObject.h:
@@ -677,3 +697,31 @@ include/Rect.h:
 /usr/include/c++/16/bits/atomic_base.h:
 /usr/include/c++/16/bits/atomic_lockfree_defines.h:
 /usr/include/c++/16/backward/auto_ptr.h:
+/usr/include/c++/16/iostream:
+/usr/include/c++/16/ostream:
+/usr/include/c++/16/bits/ostream.h:
+/usr/include/c++/16/ios:
+/usr/include/c++/16/bits/ios_base.h:
+/usr/include/c++/16/bits/locale_classes.h:
+/usr/include/c++/16/bits/functexcept.h:
+/usr/include/c++/16/bits/locale_classes.tcc:
+/usr/include/c++/16/system_error:
+/usr/include/c++/16/x86_64-pc-linux-gnu/bits/error_constants.h:
+/usr/include/c++/16/stdexcept:
+/usr/include/c++/16/bits/stdexcept_except.h:
+/usr/include/c++/16/streambuf:
+/usr/include/c++/16/bits/streambuf.tcc:
+/usr/include/c++/16/bits/basic_ios.h:
+/usr/include/c++/16/bits/locale_facets.h:
+/usr/include/c++/16/cwctype:
+/usr/include/wctype.h:
+/usr/include/bits/wctype-wchar.h:
+/usr/include/c++/16/x86_64-pc-linux-gnu/bits/ctype_base.h:
+/usr/include/c++/16/bits/streambuf_iterator.h:
+/usr/include/c++/16/x86_64-pc-linux-gnu/bits/ctype_inline.h:
+/usr/include/c++/16/bits/locale_facets.tcc:
+/usr/include/c++/16/bits/basic_ios.tcc:
+/usr/include/c++/16/bits/ostream_print.h:
+/usr/include/c++/16/bits/ostream.tcc:
+/usr/include/c++/16/istream:
+/usr/include/c++/16/bits/istream.tcc:
