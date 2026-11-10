@@ -1,102 +1,118 @@
+// src/State.cpp
 #include "State.h"
-#include "SpriteRenderer.h"
-#include "TileMap.h"
-#include "Zombie.h"
-#include "Camera.h"
 #include "InputManager.h"
+#include "Camera.h"
+#include "TileMap.h"
+#include "TileSet.h"
+#include "Zombie.h"
+#include "Character.h"
+#include "PlayerController.h"
+#include <algorithm>
 
-State::State() : quitRequested(false) {
-    Camera::Unfollow();
-    Camera::pos = Vec2();
+State::State() : quitRequested(false), started(false) {
+    // Mapa (TileMap)
+    GameObject* bgGO = new GameObject();
+    bgGO->box.x = 0;
+    bgGO->box.y = 0;
+    TileSet* tileSet = new TileSet(64, 64, "Recursos/img/Tileset.png");
+    TileMap* tileMap = new TileMap(*bgGO, "Recursos/map/map.txt", tileSet);
+    tileMap->SetParallax(0, 0.5f);
+    tileMap->SetParallax(1, 1.0f);
+    bgGO->AddComponent(tileMap);
+    AddObject(bgGO);
+
+    // Personagem Jogável em (1280, 1280) com foco da câmera
+    GameObject* playerGO = new GameObject();
+    playerGO->box.x = 1280;
+    playerGO->box.y = 1280;
+    playerGO->AddComponent(new Character(*playerGO, "Recursos/img/Player.png"));
+    playerGO->AddComponent(new PlayerController(*playerGO));
+    AddObject(playerGO);
+
+    Camera::Follow(playerGO);
+
+    music.Open("Recursos/audio/BGM.wav");
+    music.Play();
+}
+
+State::~State() {
+    objectArray.clear();
+}
+
+void State::LoadAssets() {
+    // Carregamento prévio de assets caso necessário
+}
+
+void State::Start() {
     LoadAssets();
-    music.Play(0);
-
-    // Fundo fixo na tela; estrelas, terreno e zombies nessa ordem.
-    std::unique_ptr<GameObject> background(new GameObject());
-    SpriteRenderer* backgroundSprite = new SpriteRenderer(*background, "Recursos/img/Background.png", 1, 1);
-    backgroundSprite->SetCameraFollower(true);
-    background->AddComponent(backgroundSprite);
-    background->box.x = 0;
-    background->box.y = 0;
-    AddObject(background.release());
-
-    std::unique_ptr<GameObject> map(new GameObject());
-    map->box.x = 0;
-    map->box.y = 0;
-    TileMap* tileMap = new TileMap(*map, "Recursos/map/map.txt",
-        new TileSet(64, 64, "Recursos/img/Tileset.png"));
-    map->AddComponent(tileMap);
-    if (tileMap->GetDepth() > 1)
-        tileMap->SetParallax(0, 0.5f);
-    AddObject(map.release());
-}
-
-State::~State()
-{ 
-	Camera::Unfollow();
-	objectArray.clear(); 
-}
-
-void State::LoadAssets() 
-{ 
-	music.Open("Recursos/audio/BGM.wav"); 
-}
-
-void State::Update(float dt) 
-{
-    const InputManager& input = InputManager::GetInstance();
-    if (input.QuitRequested() || input.KeyPress(ESCAPE_KEY))
-    {
-        quitRequested = true;
-        return;
+    for (size_t i = 0; i < objectArray.size(); i++) {
+        objectArray[i]->Start();
     }
-
-    Camera::Update(dt);
-    if (input.KeyPress(SPACE_KEY))
-    {
-        std::unique_ptr<GameObject> enemy(new GameObject());
-        enemy->AddComponent(new Zombie(*enemy));
-        // Centro do zombie sob o cursor, convertendo tela para mundo.
-        enemy->box.x = input.GetMouseX() + Camera::pos.x - enemy->box.w / 2.0f;
-        enemy->box.y = input.GetMouseY() + Camera::pos.y - enemy->box.h / 2.0f;
-        AddObject(enemy.release());
-    }
-
-    for (std::size_t i = 0; i < objectArray.size(); ++i) objectArray[i]->Update(dt);
-    // Recalcula begin() a cada remocao: erase invalida iteradores.
-    for (std::size_t i = 0; i < objectArray.size();) 
-    {
-        if (objectArray[i]->IsDead()) 
-        	objectArray.erase(objectArray.begin() + i);
-        else 
-        	++i;
-    }
+    started = true;
 }
 
-void State::Render() 
-{
-    // Neste mapa, camada 0 = estrelas e camada 1 = terreno/agua.
-    // Ambas ficam atras dos zombies; desenhar o terreno depois os ocultaria.
-    for (const auto& object : objectArray)
-    {
-        TileMap* map = object->GetComponent<TileMap>();
-        if (map)
-        {
-            for (int layer = 0; layer < map->GetDepth(); ++layer) map->RenderLayer(layer);
+std::weak_ptr<GameObject> State::AddObject(GameObject* go) {
+    std::shared_ptr<GameObject> ptr(go);
+    objectArray.push_back(ptr);
+    if (started) {
+        ptr->Start();
+    }
+    return std::weak_ptr<GameObject>(ptr);
+}
+
+std::weak_ptr<GameObject> State::GetObjectPtr(GameObject* go) {
+    for (size_t i = 0; i < objectArray.size(); i++) {
+        if (objectArray[i].get() == go) {
+            return std::weak_ptr<GameObject>(objectArray[i]);
         }
-        else
-            object->Render();
+    }
+    return std::weak_ptr<GameObject>();
+}
+
+void State::Update(float dt) {
+    InputManager& input = InputManager::GetInstance();
+    Camera::Update(dt);
+
+    if (input.QuitRequested() || input.KeyPress(ESCAPE_KEY)) {
+        quitRequested = true;
+    }
+
+    if (input.KeyPress(SPACE_KEY)) {
+        GameObject* zombieGO = new GameObject();
+        zombieGO->box.x = input.GetMouseX() + Camera::pos.x;
+        zombieGO->box.y = input.GetMouseY() + Camera::pos.y;
+        zombieGO->AddComponent(new Zombie(*zombieGO));
+        AddObject(zombieGO);
+    }
+
+    for (size_t i = 0; i < objectArray.size(); i++) {
+        objectArray[i]->Update(dt);
+    }
+
+    for (size_t i = 0; i < objectArray.size(); i++) {
+        if (objectArray[i]->IsDead()) {
+            objectArray.erase(objectArray.begin() + i);
+            i--;
+        }
+    }
+
+    // Extra: Y-Sorting para efeito isométrico (mantendo o TileMap sempre ao fundo)
+    if (objectArray.size() > 1) {
+        std::stable_sort(objectArray.begin(), objectArray.end(),
+            [](const std::shared_ptr<GameObject>& a, const std::shared_ptr<GameObject>& b) {
+                if (a->GetComponent("TileMap") != nullptr) return true;
+                if (b->GetComponent("TileMap") != nullptr) return false;
+                return (a->box.y + a->box.h) < (b->box.y + b->box.h);
+            });
     }
 }
 
-bool State::QuitRequested() 
-{ 
-	return quitRequested; 
+void State::Render() {
+    for (size_t i = 0; i < objectArray.size(); i++) {
+        objectArray[i]->Render();
+    }
 }
 
-void State::AddObject(GameObject* go) 
-{ 
-	objectArray.emplace_back(go); 
+bool State::QuitRequested() {
+    return quitRequested;
 }
-
-

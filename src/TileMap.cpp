@@ -77,6 +77,11 @@ void TileMap::Render()
     for (int layer = 0; layer < mapDepth; ++layer) RenderLayer(layer);
 }
 
+bool TileMap::Is(std::string type)
+{
+    return type == "TileMap";
+}
+
 void TileMap::RenderLayer(int layer) 
 {
     if (layer < 0 || layer >= mapDepth) 

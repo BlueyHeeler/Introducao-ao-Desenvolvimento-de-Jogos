@@ -21,7 +21,7 @@ void Zombie::Damage(int damage)
     	return;
     hitSound.Play(1);
     hitpoints = damage >= hitpoints ? 0 : hitpoints - damage;
-    Animator* animator = associated.GetComponent<Animator>();
+    Animator* animator = static_cast<Animator*>(associated.GetComponent("Animator"));
     
     if (hitpoints == 0) 
     {
@@ -51,7 +51,7 @@ void Zombie::Update(float dt)
     if (hit && hitTimer.Get() >= 0.5f)
     {
         hit = false;
-        Animator* animator = associated.GetComponent<Animator>();
+        Animator* animator = static_cast<Animator*>(associated.GetComponent("Animator"));
         if (animator) animator->SetAnimation("walking");
     }
 
@@ -70,3 +70,8 @@ void Zombie::Update(float dt)
 }
 
 void Zombie::Render() {}
+
+bool Zombie::Is(std::string type)
+{
+    return type == "Zombie";
+}

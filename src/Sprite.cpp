@@ -1,79 +1,78 @@
+// src/Sprite.cpp
 #include "Sprite.h"
 #include "Game.h"
 #include "Resources.h"
 #include "Camera.h"
-#include <cmath>
-#include <stdexcept>
 
 Sprite::Sprite()
-    : cameraFollower(false), texture(nullptr), width(0), height(0), frameCountW(1), frameCountH(1),
-      clipRect{0, 0, 0, 0} {}
+    : cameraFollower(false), texture(nullptr), width(0), height(0),
+      frameCountW(1), frameCountH(1), scale(1.0f, 1.0f), flip(SDL_FLIP_NONE) {}
 
-Sprite::Sprite(std::string file, int frameCountW, int frameCountH) : Sprite() 
-{
-    SetFrameCount(frameCountW, frameCountH);
+Sprite::Sprite(std::string file, int frameCountW, int frameCountH)
+    : cameraFollower(false), texture(nullptr), width(0), height(0),
+      frameCountW(frameCountW), frameCountH(frameCountH), scale(1.0f, 1.0f), flip(SDL_FLIP_NONE) {
     Open(file);
 }
 
 Sprite::~Sprite() {}
 
-void Sprite::Open(std::string file)
- {
+void Sprite::Open(std::string file) {
     texture = Resources::GetImage(file);
-    width = height = 0;
-    SetClip(0, 0, 0, 0);
-    if (!texture) return;
     SDL_QueryTexture(texture, nullptr, nullptr, &width, &height);
-    SetFrame(0);
+    SetClip(0, 0, width / frameCountW, height / frameCountH);
 }
 
-void Sprite::SetClip(int x, int y, int w, int h) 
-{ 
-    clipRect = {x, y, w, h};
+void Sprite::SetClip(int x, int y, int w, int h) {
+    clipRect.x = x;
+    clipRect.y = y;
+    clipRect.w = w;
+    clipRect.h = h;
 }
 
-void Sprite::Render(float x, float y, int w, int h)
-{
-    if (!texture || w <= 0 || h <= 0) 
-        return;
-    if (!cameraFollower)
-    {
-        x -= Camera::pos.x;
-        y -= Camera::pos.y;
-    }
-    SDL_Rect destination{static_cast<int>(std::round(x)), static_cast<int>(std::round(y)), w, h};
-    SDL_RenderCopy(Game::GetInstance().GetRenderer(), texture, &clipRect, &destination);
+void Sprite::SetFrame(int frame) {
+    int frameW = width / frameCountW;
+    int frameH = height / frameCountH;
+    int col = frame % frameCountW;
+    int row = frame / frameCountW;
+    SetClip(col * frameW, row * frameH, frameW, frameH);
 }
 
-int Sprite::GetWidth() 
-{ 
-    return width / frameCountW; 
+void Sprite::SetFrameCount(int frameCountW, int frameCountH) {
+    this->frameCountW = frameCountW;
+    this->frameCountH = frameCountH;
 }
 
-int Sprite::GetHeight() 
-{ 
-    return height / frameCountH; 
+void Sprite::SetScale(float scaleX, float scaleY) {
+    if (scaleX != 0.0f) scale.x = scaleX;
+    if (scaleY != 0.0f) scale.y = scaleY;
 }
 
-bool Sprite::IsOpen() 
-{ 
-    return texture != nullptr; 
+Vec2 Sprite::GetScale() {
+    return scale;
 }
 
-void Sprite::SetFrameCount(int columns, int rows) 
-{
-    if (columns <= 0 || rows <= 0)
-        throw std::invalid_argument("Quantidade de frames deve ser positiva.");
-    frameCountW = columns;
-    frameCountH = rows;
-    if (texture) SetFrame(0);
+void Sprite::SetFlip(SDL_RendererFlip flip) {
+    this->flip = flip;
 }
 
-void Sprite::SetFrame(int frame)
-{
-    if (!texture || frame < 0 || frame / frameCountW >= frameCountH) return;
-    const int frameWidth = GetWidth();
-    const int frameHeight = GetHeight();
-    SetClip((frame % frameCountW) * frameWidth,
-            (frame / frameCountW) * frameHeight, frameWidth, frameHeight);
+int Sprite::GetWidth() {
+    return static_cast<int>((width / frameCountW) * scale.x);
+}
+
+int Sprite::GetHeight() {
+    return static_cast<int>((height / frameCountH) * scale.y);
+}
+
+void Sprite::Render(int x, int y, int w, int h, float angle) {
+    SDL_Rect dstRect;
+    dstRect.x = cameraFollower ? x : static_cast<int>(x - Camera::pos.x);
+    dstRect.y = cameraFollower ? y : static_cast<int>(y - Camera::pos.y);
+    dstRect.w = w;
+    dstRect.h = h;
+
+    SDL_RenderCopyEx(Game::GetInstance().GetRenderer(), texture, &clipRect, &dstRect, angle, nullptr, flip);
+}
+
+bool Sprite::IsOpen() {
+    return texture != nullptr;
 }

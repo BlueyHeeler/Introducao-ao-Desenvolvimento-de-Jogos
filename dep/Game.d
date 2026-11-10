@@ -244,9 +244,7 @@ dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/16/bits/functional_hash.h \
  /usr/include/c++/16/bits/hash_bytes.h \
  /usr/include/c++/16/bits/basic_string.tcc include/State.h \
- include/Music.h /usr/include/SDL2/SDL_mixer.h include/GameObject.h \
- include/Component.h include/Rect.h /usr/include/c++/16/vector \
- /usr/include/c++/16/bits/stl_uninitialized.h \
+ /usr/include/c++/16/vector /usr/include/c++/16/bits/stl_uninitialized.h \
  /usr/include/c++/16/bits/stl_vector.h \
  /usr/include/c++/16/bits/stl_bvector.h \
  /usr/include/c++/16/bits/vector.tcc /usr/include/c++/16/memory \
@@ -283,7 +281,9 @@ dep/Game.d bin/Game.o: src/Game.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/16/bits/shared_ptr_atomic.h \
  /usr/include/c++/16/bits/atomic_base.h \
  /usr/include/c++/16/bits/atomic_lockfree_defines.h \
- /usr/include/c++/16/backward/auto_ptr.h include/Resources.h \
+ /usr/include/c++/16/backward/auto_ptr.h include/GameObject.h \
+ include/Component.h include/Rect.h include/Music.h \
+ /usr/include/SDL2/SDL_mixer.h include/Resources.h \
  /usr/include/c++/16/unordered_map \
  /usr/include/c++/16/bits/unordered_map.h \
  /usr/include/c++/16/bits/hashtable.h \
@@ -620,11 +620,6 @@ include/SDL_include.h:
 /usr/include/c++/16/bits/hash_bytes.h:
 /usr/include/c++/16/bits/basic_string.tcc:
 include/State.h:
-include/Music.h:
-/usr/include/SDL2/SDL_mixer.h:
-include/GameObject.h:
-include/Component.h:
-include/Rect.h:
 /usr/include/c++/16/vector:
 /usr/include/c++/16/bits/stl_uninitialized.h:
 /usr/include/c++/16/bits/stl_vector.h:
@@ -683,6 +678,11 @@ include/Rect.h:
 /usr/include/c++/16/bits/atomic_base.h:
 /usr/include/c++/16/bits/atomic_lockfree_defines.h:
 /usr/include/c++/16/backward/auto_ptr.h:
+include/GameObject.h:
+include/Component.h:
+include/Rect.h:
+include/Music.h:
+/usr/include/SDL2/SDL_mixer.h:
 include/Resources.h:
 /usr/include/c++/16/unordered_map:
 /usr/include/c++/16/bits/unordered_map.h:

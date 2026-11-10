@@ -252,8 +252,7 @@ dep/Resources.d bin/Resources.o: src/Resources.cpp \
  /usr/include/c++/16/bits/invoke.h \
  /usr/include/c++/16/ext/aligned_buffer.h \
  /usr/include/c++/16/bits/enable_special_members.h include/Game.h \
- include/State.h include/Music.h include/GameObject.h include/Component.h \
- include/Rect.h /usr/include/c++/16/vector \
+ include/State.h /usr/include/c++/16/vector \
  /usr/include/c++/16/bits/stl_uninitialized.h \
  /usr/include/c++/16/bits/stl_vector.h \
  /usr/include/c++/16/bits/stl_bvector.h \
@@ -288,9 +287,11 @@ dep/Resources.d bin/Resources.o: src/Resources.cpp \
  /usr/include/c++/16/bits/shared_ptr_atomic.h \
  /usr/include/c++/16/bits/atomic_base.h \
  /usr/include/c++/16/bits/atomic_lockfree_defines.h \
- /usr/include/c++/16/backward/auto_ptr.h /usr/include/c++/16/iostream \
- /usr/include/c++/16/ostream /usr/include/c++/16/bits/ostream.h \
- /usr/include/c++/16/ios /usr/include/c++/16/bits/ios_base.h \
+ /usr/include/c++/16/backward/auto_ptr.h include/GameObject.h \
+ include/Component.h include/Rect.h include/Music.h \
+ /usr/include/c++/16/iostream /usr/include/c++/16/ostream \
+ /usr/include/c++/16/bits/ostream.h /usr/include/c++/16/ios \
+ /usr/include/c++/16/bits/ios_base.h \
  /usr/include/c++/16/bits/locale_classes.h \
  /usr/include/c++/16/bits/functexcept.h \
  /usr/include/c++/16/bits/locale_classes.tcc \
@@ -650,10 +651,6 @@ include/SDL_include.h:
 /usr/include/c++/16/bits/enable_special_members.h:
 include/Game.h:
 include/State.h:
-include/Music.h:
-include/GameObject.h:
-include/Component.h:
-include/Rect.h:
 /usr/include/c++/16/vector:
 /usr/include/c++/16/bits/stl_uninitialized.h:
 /usr/include/c++/16/bits/stl_vector.h:
@@ -708,6 +705,10 @@ include/Rect.h:
 /usr/include/c++/16/bits/atomic_base.h:
 /usr/include/c++/16/bits/atomic_lockfree_defines.h:
 /usr/include/c++/16/backward/auto_ptr.h:
+include/GameObject.h:
+include/Component.h:
+include/Rect.h:
+include/Music.h:
 /usr/include/c++/16/iostream:
 /usr/include/c++/16/ostream:
 /usr/include/c++/16/bits/ostream.h:

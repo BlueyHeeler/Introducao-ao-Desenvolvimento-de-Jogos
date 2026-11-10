@@ -17,6 +17,7 @@ public:
     int& At(int x, int y, int z = 0);
     void Update(float dt) override;
     void Render() override;
+    bool Is(std::string type) override;
     void RenderLayer(int layer);
     void SetParallax(int layer, float factor);
     int GetWidth();

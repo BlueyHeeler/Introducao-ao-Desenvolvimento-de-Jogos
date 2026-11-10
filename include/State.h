@@ -1,24 +1,31 @@
 #ifndef STATE_H
 #define STATE_H
 
-#include "Music.h"
-#include "GameObject.h"
-#include <memory>
+#pragma once
 #include <vector>
+#include <memory>
+#include "GameObject.h"
+#include "Music.h"
 
-class State 
-{
+class State {
 public:
     State();
     ~State();
+
+    void Start();
     bool QuitRequested();
     void LoadAssets();
     void Update(float dt);
     void Render();
-    void AddObject(GameObject* go);
+
+    std::weak_ptr<GameObject> AddObject(GameObject* go);
+    std::weak_ptr<GameObject> GetObjectPtr(GameObject* go);
+
 private:
     Music music;
     bool quitRequested;
-    std::vector<std::unique_ptr<GameObject>> objectArray;
+    bool started;
+    std::vector<std::shared_ptr<GameObject>> objectArray;
 };
-#endif
+
+#endif // STATE_H

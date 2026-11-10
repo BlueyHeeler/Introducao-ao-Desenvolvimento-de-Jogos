@@ -1,5 +1,5 @@
 dep/State.d bin/State.o: src/State.cpp /usr/include/stdc-predef.h \
- include/State.h include/Music.h /usr/include/c++/16/string \
+ include/State.h /usr/include/c++/16/vector \
  /usr/include/c++/16/bits/requires_hosted.h \
  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++config.h \
  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/os_defines.h \
@@ -8,9 +8,49 @@ dep/State.d bin/State.o: src/State.cpp /usr/include/stdc-predef.h \
  /usr/include/sys/cdefs.h /usr/include/bits/long-double.h \
  /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
  /usr/include/c++/16/x86_64-pc-linux-gnu/bits/cpu_defines.h \
- /usr/include/c++/16/bits/stringfwd.h \
- /usr/include/c++/16/bits/memoryfwd.h /usr/include/c++/16/bits/version.h \
- /usr/include/c++/16/bits/char_traits.h \
+ /usr/include/c++/16/bits/stl_algobase.h \
+ /usr/include/c++/16/bits/cpp_type_traits.h \
+ /usr/include/c++/16/bits/version.h /usr/include/c++/16/ext/type_traits.h \
+ /usr/include/c++/16/ext/numeric_traits.h \
+ /usr/include/c++/16/bits/stl_pair.h /usr/include/c++/16/type_traits \
+ /usr/include/c++/16/bits/move.h /usr/include/c++/16/bits/utility.h \
+ /usr/include/c++/16/bits/stl_iterator_base_types.h \
+ /usr/include/c++/16/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/16/bits/concept_check.h \
+ /usr/include/c++/16/debug/assertions.h \
+ /usr/include/c++/16/bits/stl_iterator.h \
+ /usr/include/c++/16/bits/ptr_traits.h /usr/include/c++/16/debug/debug.h \
+ /usr/include/c++/16/bits/predefined_ops.h \
+ /usr/include/c++/16/bits/stl_function.h \
+ /usr/include/c++/16/backward/binders.h \
+ /usr/include/c++/16/bits/allocator.h \
+ /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++allocator.h \
+ /usr/include/c++/16/bits/new_allocator.h /usr/include/c++/16/new \
+ /usr/include/c++/16/bits/exception.h \
+ /usr/include/c++/16/bits/new_except.h \
+ /usr/include/c++/16/bits/exception_defines.h \
+ /usr/include/c++/16/bits/new_throw.h \
+ /usr/include/c++/16/bits/memoryfwd.h \
+ /usr/include/c++/16/bits/stl_construct.h \
+ /usr/include/c++/16/bits/stl_uninitialized.h \
+ /usr/include/c++/16/ext/alloc_traits.h \
+ /usr/include/c++/16/bits/alloc_traits.h \
+ /usr/include/c++/16/bits/stl_vector.h \
+ /usr/include/c++/16/bits/stdexcept_throw.h \
+ /usr/include/c++/16/bits/stdexcept_throwfwd.h \
+ /usr/include/c++/16/initializer_list \
+ /usr/include/c++/16/bits/stl_bvector.h \
+ /usr/include/c++/16/bits/functional_hash.h \
+ /usr/include/c++/16/bits/hash_bytes.h \
+ /usr/include/c++/16/bits/range_access.h \
+ /usr/include/c++/16/bits/erase_if.h /usr/include/c++/16/bits/vector.tcc \
+ /usr/include/c++/16/memory /usr/include/c++/16/bits/stl_tempbuf.h \
+ /usr/include/c++/16/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/16/bits/align.h /usr/include/c++/16/bit \
+ /usr/include/c++/16/bits/uses_allocator.h \
+ /usr/include/c++/16/bits/unique_ptr.h /usr/include/c++/16/tuple \
+ /usr/include/c++/16/bits/invoke.h /usr/include/c++/16/bits/shared_ptr.h \
+ /usr/include/c++/16/iosfwd /usr/include/c++/16/bits/stringfwd.h \
  /usr/include/c++/16/bits/postypes.h /usr/include/c++/16/cwchar \
  /usr/include/wchar.h /usr/include/bits/libc-header-start.h \
  /usr/include/bits/floatn.h /usr/include/bits/floatn-common.h \
@@ -20,61 +60,62 @@ dep/State.d bin/State.o: src/State.cpp /usr/include/stdc-predef.h \
  /usr/include/bits/types/mbstate_t.h \
  /usr/include/bits/types/__mbstate_t.h /usr/include/bits/types/__FILE.h \
  /usr/include/bits/types/FILE.h /usr/include/bits/types/locale_t.h \
- /usr/include/bits/types/__locale_t.h /usr/include/c++/16/type_traits \
- /usr/include/c++/16/bits/allocator.h \
- /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++allocator.h \
- /usr/include/c++/16/bits/new_allocator.h /usr/include/c++/16/new \
- /usr/include/c++/16/bits/exception.h \
- /usr/include/c++/16/bits/new_except.h \
- /usr/include/c++/16/bits/exception_defines.h \
- /usr/include/c++/16/bits/new_throw.h /usr/include/c++/16/bits/move.h \
- /usr/include/c++/16/bits/cpp_type_traits.h \
- /usr/include/c++/16/bits/localefwd.h \
- /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++locale.h \
- /usr/include/c++/16/clocale /usr/include/locale.h \
- /usr/include/bits/locale.h /usr/include/c++/16/iosfwd \
- /usr/include/c++/16/cctype /usr/include/ctype.h \
- /usr/include/bits/types.h /usr/include/bits/typesizes.h \
- /usr/include/bits/time64.h /usr/include/bits/endian.h \
- /usr/include/bits/endianness.h /usr/include/c++/16/bits/ostream_insert.h \
- /usr/include/c++/16/bits/cxxabi_forced.h \
- /usr/include/c++/16/bits/stl_iterator_base_funcs.h \
- /usr/include/c++/16/bits/concept_check.h \
- /usr/include/c++/16/debug/assertions.h \
- /usr/include/c++/16/bits/stl_iterator_base_types.h \
- /usr/include/c++/16/bits/stl_iterator.h \
- /usr/include/c++/16/ext/type_traits.h \
- /usr/include/c++/16/bits/ptr_traits.h \
- /usr/include/c++/16/bits/stl_function.h \
- /usr/include/c++/16/backward/binders.h \
- /usr/include/c++/16/ext/numeric_traits.h \
- /usr/include/c++/16/bits/stdexcept_throw.h \
- /usr/include/c++/16/bits/stdexcept_throwfwd.h \
- /usr/include/c++/16/bits/stl_algobase.h \
- /usr/include/c++/16/bits/stl_pair.h /usr/include/c++/16/bits/utility.h \
- /usr/include/c++/16/debug/debug.h \
- /usr/include/c++/16/bits/predefined_ops.h \
- /usr/include/c++/16/bits/range_access.h \
- /usr/include/c++/16/initializer_list /usr/include/c++/16/bits/erase_if.h \
- /usr/include/c++/16/bits/basic_string.h \
- /usr/include/c++/16/ext/alloc_traits.h \
- /usr/include/c++/16/bits/alloc_traits.h \
- /usr/include/c++/16/bits/stl_construct.h \
- /usr/include/c++/16/ext/string_conversions.h /usr/include/c++/16/cstdlib \
- /usr/include/stdlib.h /usr/include/bits/waitflags.h \
- /usr/include/bits/waitstatus.h /usr/include/sys/types.h \
- /usr/include/bits/types/clock_t.h /usr/include/bits/types/clockid_t.h \
- /usr/include/bits/types/time_t.h /usr/include/bits/types/timer_t.h \
- /usr/include/bits/stdint-intn.h /usr/include/endian.h \
- /usr/include/bits/byteswap.h /usr/include/bits/uintn-identity.h \
- /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/types/sigset_t.h /usr/include/bits/types/__sigset_t.h \
+ /usr/include/bits/types/__locale_t.h \
+ /usr/include/c++/16/bits/shared_ptr_base.h /usr/include/c++/16/typeinfo \
+ /usr/include/c++/16/bits/allocated_ptr.h \
+ /usr/include/c++/16/bits/refwrap.h \
+ /usr/include/c++/16/ext/aligned_buffer.h \
+ /usr/include/c++/16/ext/atomicity.h \
+ /usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr.h \
+ /usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/time64.h \
+ /usr/include/bits/types/time_t.h \
+ /usr/include/bits/types/struct_timespec.h /usr/include/bits/endian.h \
+ /usr/include/bits/endianness.h /usr/include/bits/sched.h \
+ /usr/include/linux/sched/types.h /usr/include/linux/types.h \
+ /usr/include/asm/types.h /usr/include/asm-generic/types.h \
+ /usr/include/asm-generic/int-ll64.h /usr/include/asm/bitsperlong.h \
+ /usr/include/asm-generic/bitsperlong.h /usr/include/linux/posix_types.h \
+ /usr/include/linux/stddef.h /usr/include/asm/posix_types.h \
+ /usr/include/asm/posix_types_64.h /usr/include/asm-generic/posix_types.h \
+ /usr/include/bits/types/struct_sched_param.h /usr/include/bits/cpu-set.h \
+ /usr/include/time.h /usr/include/bits/time.h /usr/include/bits/timex.h \
  /usr/include/bits/types/struct_timeval.h \
- /usr/include/bits/types/struct_timespec.h \
+ /usr/include/bits/types/clock_t.h /usr/include/bits/types/struct_tm.h \
+ /usr/include/bits/types/clockid_t.h /usr/include/bits/types/timer_t.h \
+ /usr/include/bits/types/struct_itimerspec.h \
  /usr/include/bits/pthreadtypes.h /usr/include/bits/thread-shared-types.h \
  /usr/include/bits/pthreadtypes-arch.h \
  /usr/include/bits/atomic_wide_counter.h /usr/include/bits/struct_mutex.h \
- /usr/include/bits/struct_rwlock.h /usr/include/alloca.h \
+ /usr/include/bits/struct_rwlock.h /usr/include/bits/setjmp.h \
+ /usr/include/bits/types/__sigset_t.h \
+ /usr/include/bits/types/struct___jmp_buf_tag.h \
+ /usr/include/bits/pthread_stack_min-dynamic.h \
+ /usr/include/c++/16/x86_64-pc-linux-gnu/bits/atomic_word.h \
+ /usr/include/sys/single_threaded.h /usr/include/c++/16/ext/concurrence.h \
+ /usr/include/c++/16/exception /usr/include/c++/16/bits/exception_ptr.h \
+ /usr/include/c++/16/bits/cxxabi_init_exception.h \
+ /usr/include/c++/16/bits/nested_exception.h \
+ /usr/include/c++/16/bits/shared_ptr_atomic.h \
+ /usr/include/c++/16/bits/atomic_base.h \
+ /usr/include/c++/16/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/16/backward/auto_ptr.h include/GameObject.h \
+ /usr/include/c++/16/string /usr/include/c++/16/bits/char_traits.h \
+ /usr/include/c++/16/bits/localefwd.h \
+ /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++locale.h \
+ /usr/include/c++/16/clocale /usr/include/locale.h \
+ /usr/include/bits/locale.h /usr/include/c++/16/cctype \
+ /usr/include/ctype.h /usr/include/c++/16/bits/ostream_insert.h \
+ /usr/include/c++/16/bits/cxxabi_forced.h \
+ /usr/include/c++/16/bits/basic_string.h \
+ /usr/include/c++/16/ext/string_conversions.h /usr/include/c++/16/cstdlib \
+ /usr/include/stdlib.h /usr/include/bits/waitflags.h \
+ /usr/include/bits/waitstatus.h /usr/include/sys/types.h \
+ /usr/include/bits/stdint-intn.h /usr/include/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/uintn-identity.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/types/sigset_t.h /usr/include/alloca.h \
  /usr/include/bits/stdlib-float.h /usr/include/c++/16/bits/std_abs.h \
  /usr/include/c++/16/cstdio /usr/include/stdio.h \
  /usr/include/bits/types/__fpos_t.h /usr/include/bits/types/__fpos64_t.h \
@@ -85,9 +126,8 @@ dep/State.d bin/State.o: src/State.cpp /usr/include/stdc-predef.h \
  /usr/include/linux/errno.h /usr/include/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/bits/types/error_t.h /usr/include/c++/16/bits/charconv.h \
- /usr/include/c++/16/bits/functional_hash.h \
- /usr/include/c++/16/bits/hash_bytes.h \
- /usr/include/c++/16/bits/basic_string.tcc include/SDL_include.h \
+ /usr/include/c++/16/bits/basic_string.tcc include/Component.h \
+ include/Rect.h include/Music.h include/SDL_include.h \
  /usr/include/SDL2/SDL_mixer.h /usr/include/SDL2/SDL_stdinc.h \
  /usr/include/SDL2/SDL_config.h /usr/include/SDL2/SDL_platform.h \
  /usr/include/SDL2/begin_code.h /usr/include/SDL2/close_code.h \
@@ -96,7 +136,6 @@ dep/State.d bin/State.o: src/State.cpp /usr/include/stdc-predef.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/syslimits.h \
  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
- /usr/include/bits/pthread_stack_min-dynamic.h \
  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
  /usr/include/bits/uio_lim.h /usr/include/c++/16/stdlib.h \
  /usr/include/string.h /usr/include/strings.h /usr/include/inttypes.h \
@@ -115,48 +154,9 @@ dep/State.d bin/State.o: src/State.cpp /usr/include/stdc-predef.h \
  /usr/include/SDL2/SDL_audio.h /usr/include/SDL2/SDL_endian.h \
  /usr/include/SDL2/SDL_mutex.h /usr/include/SDL2/SDL_thread.h \
  /usr/include/SDL2/SDL_atomic.h /usr/include/SDL2/SDL_version.h \
- include/GameObject.h include/Component.h include/Rect.h \
- /usr/include/c++/16/vector /usr/include/c++/16/bits/stl_uninitialized.h \
- /usr/include/c++/16/bits/stl_vector.h \
- /usr/include/c++/16/bits/stl_bvector.h \
- /usr/include/c++/16/bits/vector.tcc /usr/include/c++/16/memory \
- /usr/include/c++/16/bits/stl_tempbuf.h \
- /usr/include/c++/16/bits/stl_raw_storage_iter.h \
- /usr/include/c++/16/bits/align.h /usr/include/c++/16/bit \
- /usr/include/c++/16/bits/uses_allocator.h \
- /usr/include/c++/16/bits/unique_ptr.h /usr/include/c++/16/tuple \
- /usr/include/c++/16/bits/invoke.h /usr/include/c++/16/bits/shared_ptr.h \
- /usr/include/c++/16/bits/shared_ptr_base.h /usr/include/c++/16/typeinfo \
- /usr/include/c++/16/bits/allocated_ptr.h \
- /usr/include/c++/16/bits/refwrap.h \
- /usr/include/c++/16/ext/aligned_buffer.h \
- /usr/include/c++/16/ext/atomicity.h \
- /usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr.h \
- /usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr-default.h \
- /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
- /usr/include/linux/sched/types.h /usr/include/linux/types.h \
- /usr/include/asm/types.h /usr/include/asm-generic/types.h \
- /usr/include/asm-generic/int-ll64.h /usr/include/asm/bitsperlong.h \
- /usr/include/asm-generic/bitsperlong.h /usr/include/linux/posix_types.h \
- /usr/include/linux/stddef.h /usr/include/asm/posix_types.h \
- /usr/include/asm/posix_types_64.h /usr/include/asm-generic/posix_types.h \
- /usr/include/bits/types/struct_sched_param.h /usr/include/bits/cpu-set.h \
- /usr/include/time.h /usr/include/bits/time.h /usr/include/bits/timex.h \
- /usr/include/bits/types/struct_tm.h \
- /usr/include/bits/types/struct_itimerspec.h /usr/include/bits/setjmp.h \
- /usr/include/bits/types/struct___jmp_buf_tag.h \
- /usr/include/c++/16/x86_64-pc-linux-gnu/bits/atomic_word.h \
- /usr/include/sys/single_threaded.h /usr/include/c++/16/ext/concurrence.h \
- /usr/include/c++/16/exception /usr/include/c++/16/bits/exception_ptr.h \
- /usr/include/c++/16/bits/cxxabi_init_exception.h \
- /usr/include/c++/16/bits/nested_exception.h \
- /usr/include/c++/16/bits/shared_ptr_atomic.h \
- /usr/include/c++/16/bits/atomic_base.h \
- /usr/include/c++/16/bits/atomic_lockfree_defines.h \
- /usr/include/c++/16/backward/auto_ptr.h include/SpriteRenderer.h \
- include/Sprite.h /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
- /usr/include/SDL2/SDL_assert.h /usr/include/SDL2/SDL_clipboard.h \
- /usr/include/SDL2/SDL_cpuinfo.h \
+ include/InputManager.h /usr/include/SDL2/SDL.h \
+ /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_assert.h \
+ /usr/include/SDL2/SDL_clipboard.h /usr/include/SDL2/SDL_cpuinfo.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/immintrin.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/x86gprintrin.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/ia32intrin.h \
@@ -282,18 +282,24 @@ dep/State.d bin/State.o: src/State.cpp /usr/include/stdc-predef.h \
  /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_shape.h \
  /usr/include/SDL2/SDL_system.h /usr/include/SDL2/SDL_timer.h \
  /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
- /usr/include/SDL2/SDL_image.h /usr/include/SDL2/SDL.h include/TileMap.h \
- include/TileSet.h include/Zombie.h include/Sound.h include/Timer.h \
- include/Camera.h include/Vec2.h include/InputManager.h \
  /usr/include/c++/16/unordered_map \
  /usr/include/c++/16/bits/unordered_map.h \
  /usr/include/c++/16/bits/hashtable.h \
  /usr/include/c++/16/bits/hashtable_policy.h \
- /usr/include/c++/16/bits/enable_special_members.h
+ /usr/include/c++/16/bits/enable_special_members.h include/Camera.h \
+ include/Vec2.h include/TileMap.h include/TileSet.h include/Sprite.h \
+ /usr/include/SDL2/SDL_image.h /usr/include/SDL2/SDL.h include/TileSet.h \
+ include/Zombie.h include/Sound.h include/Timer.h include/Character.h \
+ /usr/include/c++/16/queue /usr/include/c++/16/deque \
+ /usr/include/c++/16/bits/stl_deque.h /usr/include/c++/16/bits/deque.tcc \
+ /usr/include/c++/16/bits/stl_heap.h /usr/include/c++/16/bits/stl_queue.h \
+ include/PlayerController.h /usr/include/c++/16/algorithm \
+ /usr/include/c++/16/bits/stl_algo.h \
+ /usr/include/c++/16/bits/algorithmfwd.h \
+ /usr/include/c++/16/bits/uniform_int_dist.h
 /usr/include/stdc-predef.h:
 include/State.h:
-include/Music.h:
-/usr/include/c++/16/string:
+/usr/include/c++/16/vector:
 /usr/include/c++/16/bits/requires_hosted.h:
 /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++config.h:
 /usr/include/c++/16/x86_64-pc-linux-gnu/bits/os_defines.h:
@@ -306,10 +312,60 @@ include/Music.h:
 /usr/include/gnu/stubs.h:
 /usr/include/gnu/stubs-64.h:
 /usr/include/c++/16/x86_64-pc-linux-gnu/bits/cpu_defines.h:
-/usr/include/c++/16/bits/stringfwd.h:
-/usr/include/c++/16/bits/memoryfwd.h:
+/usr/include/c++/16/bits/stl_algobase.h:
+/usr/include/c++/16/bits/cpp_type_traits.h:
 /usr/include/c++/16/bits/version.h:
-/usr/include/c++/16/bits/char_traits.h:
+/usr/include/c++/16/ext/type_traits.h:
+/usr/include/c++/16/ext/numeric_traits.h:
+/usr/include/c++/16/bits/stl_pair.h:
+/usr/include/c++/16/type_traits:
+/usr/include/c++/16/bits/move.h:
+/usr/include/c++/16/bits/utility.h:
+/usr/include/c++/16/bits/stl_iterator_base_types.h:
+/usr/include/c++/16/bits/stl_iterator_base_funcs.h:
+/usr/include/c++/16/bits/concept_check.h:
+/usr/include/c++/16/debug/assertions.h:
+/usr/include/c++/16/bits/stl_iterator.h:
+/usr/include/c++/16/bits/ptr_traits.h:
+/usr/include/c++/16/debug/debug.h:
+/usr/include/c++/16/bits/predefined_ops.h:
+/usr/include/c++/16/bits/stl_function.h:
+/usr/include/c++/16/backward/binders.h:
+/usr/include/c++/16/bits/allocator.h:
+/usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++allocator.h:
+/usr/include/c++/16/bits/new_allocator.h:
+/usr/include/c++/16/new:
+/usr/include/c++/16/bits/exception.h:
+/usr/include/c++/16/bits/new_except.h:
+/usr/include/c++/16/bits/exception_defines.h:
+/usr/include/c++/16/bits/new_throw.h:
+/usr/include/c++/16/bits/memoryfwd.h:
+/usr/include/c++/16/bits/stl_construct.h:
+/usr/include/c++/16/bits/stl_uninitialized.h:
+/usr/include/c++/16/ext/alloc_traits.h:
+/usr/include/c++/16/bits/alloc_traits.h:
+/usr/include/c++/16/bits/stl_vector.h:
+/usr/include/c++/16/bits/stdexcept_throw.h:
+/usr/include/c++/16/bits/stdexcept_throwfwd.h:
+/usr/include/c++/16/initializer_list:
+/usr/include/c++/16/bits/stl_bvector.h:
+/usr/include/c++/16/bits/functional_hash.h:
+/usr/include/c++/16/bits/hash_bytes.h:
+/usr/include/c++/16/bits/range_access.h:
+/usr/include/c++/16/bits/erase_if.h:
+/usr/include/c++/16/bits/vector.tcc:
+/usr/include/c++/16/memory:
+/usr/include/c++/16/bits/stl_tempbuf.h:
+/usr/include/c++/16/bits/stl_raw_storage_iter.h:
+/usr/include/c++/16/bits/align.h:
+/usr/include/c++/16/bit:
+/usr/include/c++/16/bits/uses_allocator.h:
+/usr/include/c++/16/bits/unique_ptr.h:
+/usr/include/c++/16/tuple:
+/usr/include/c++/16/bits/invoke.h:
+/usr/include/c++/16/bits/shared_ptr.h:
+/usr/include/c++/16/iosfwd:
+/usr/include/c++/16/bits/stringfwd.h:
 /usr/include/c++/16/bits/postypes.h:
 /usr/include/c++/16/cwchar:
 /usr/include/wchar.h:
@@ -326,66 +382,87 @@ include/Music.h:
 /usr/include/bits/types/FILE.h:
 /usr/include/bits/types/locale_t.h:
 /usr/include/bits/types/__locale_t.h:
-/usr/include/c++/16/type_traits:
-/usr/include/c++/16/bits/allocator.h:
-/usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++allocator.h:
-/usr/include/c++/16/bits/new_allocator.h:
-/usr/include/c++/16/new:
-/usr/include/c++/16/bits/exception.h:
-/usr/include/c++/16/bits/new_except.h:
-/usr/include/c++/16/bits/exception_defines.h:
-/usr/include/c++/16/bits/new_throw.h:
-/usr/include/c++/16/bits/move.h:
-/usr/include/c++/16/bits/cpp_type_traits.h:
+/usr/include/c++/16/bits/shared_ptr_base.h:
+/usr/include/c++/16/typeinfo:
+/usr/include/c++/16/bits/allocated_ptr.h:
+/usr/include/c++/16/bits/refwrap.h:
+/usr/include/c++/16/ext/aligned_buffer.h:
+/usr/include/c++/16/ext/atomicity.h:
+/usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr.h:
+/usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr-default.h:
+/usr/include/pthread.h:
+/usr/include/sched.h:
+/usr/include/bits/types.h:
+/usr/include/bits/typesizes.h:
+/usr/include/bits/time64.h:
+/usr/include/bits/types/time_t.h:
+/usr/include/bits/types/struct_timespec.h:
+/usr/include/bits/endian.h:
+/usr/include/bits/endianness.h:
+/usr/include/bits/sched.h:
+/usr/include/linux/sched/types.h:
+/usr/include/linux/types.h:
+/usr/include/asm/types.h:
+/usr/include/asm-generic/types.h:
+/usr/include/asm-generic/int-ll64.h:
+/usr/include/asm/bitsperlong.h:
+/usr/include/asm-generic/bitsperlong.h:
+/usr/include/linux/posix_types.h:
+/usr/include/linux/stddef.h:
+/usr/include/asm/posix_types.h:
+/usr/include/asm/posix_types_64.h:
+/usr/include/asm-generic/posix_types.h:
+/usr/include/bits/types/struct_sched_param.h:
+/usr/include/bits/cpu-set.h:
+/usr/include/time.h:
+/usr/include/bits/time.h:
+/usr/include/bits/timex.h:
+/usr/include/bits/types/struct_timeval.h:
+/usr/include/bits/types/clock_t.h:
+/usr/include/bits/types/struct_tm.h:
+/usr/include/bits/types/clockid_t.h:
+/usr/include/bits/types/timer_t.h:
+/usr/include/bits/types/struct_itimerspec.h:
+/usr/include/bits/pthreadtypes.h:
+/usr/include/bits/thread-shared-types.h:
+/usr/include/bits/pthreadtypes-arch.h:
+/usr/include/bits/atomic_wide_counter.h:
+/usr/include/bits/struct_mutex.h:
+/usr/include/bits/struct_rwlock.h:
+/usr/include/bits/setjmp.h:
+/usr/include/bits/types/__sigset_t.h:
+/usr/include/bits/types/struct___jmp_buf_tag.h:
+/usr/include/bits/pthread_stack_min-dynamic.h:
+/usr/include/c++/16/x86_64-pc-linux-gnu/bits/atomic_word.h:
+/usr/include/sys/single_threaded.h:
+/usr/include/c++/16/ext/concurrence.h:
+/usr/include/c++/16/exception:
+/usr/include/c++/16/bits/exception_ptr.h:
+/usr/include/c++/16/bits/cxxabi_init_exception.h:
+/usr/include/c++/16/bits/nested_exception.h:
+/usr/include/c++/16/bits/shared_ptr_atomic.h:
+/usr/include/c++/16/bits/atomic_base.h:
+/usr/include/c++/16/bits/atomic_lockfree_defines.h:
+/usr/include/c++/16/backward/auto_ptr.h:
+include/GameObject.h:
+/usr/include/c++/16/string:
+/usr/include/c++/16/bits/char_traits.h:
 /usr/include/c++/16/bits/localefwd.h:
 /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++locale.h:
 /usr/include/c++/16/clocale:
 /usr/include/locale.h:
 /usr/include/bits/locale.h:
-/usr/include/c++/16/iosfwd:
 /usr/include/c++/16/cctype:
 /usr/include/ctype.h:
-/usr/include/bits/types.h:
-/usr/include/bits/typesizes.h:
-/usr/include/bits/time64.h:
-/usr/include/bits/endian.h:
-/usr/include/bits/endianness.h:
 /usr/include/c++/16/bits/ostream_insert.h:
 /usr/include/c++/16/bits/cxxabi_forced.h:
-/usr/include/c++/16/bits/stl_iterator_base_funcs.h:
-/usr/include/c++/16/bits/concept_check.h:
-/usr/include/c++/16/debug/assertions.h:
-/usr/include/c++/16/bits/stl_iterator_base_types.h:
-/usr/include/c++/16/bits/stl_iterator.h:
-/usr/include/c++/16/ext/type_traits.h:
-/usr/include/c++/16/bits/ptr_traits.h:
-/usr/include/c++/16/bits/stl_function.h:
-/usr/include/c++/16/backward/binders.h:
-/usr/include/c++/16/ext/numeric_traits.h:
-/usr/include/c++/16/bits/stdexcept_throw.h:
-/usr/include/c++/16/bits/stdexcept_throwfwd.h:
-/usr/include/c++/16/bits/stl_algobase.h:
-/usr/include/c++/16/bits/stl_pair.h:
-/usr/include/c++/16/bits/utility.h:
-/usr/include/c++/16/debug/debug.h:
-/usr/include/c++/16/bits/predefined_ops.h:
-/usr/include/c++/16/bits/range_access.h:
-/usr/include/c++/16/initializer_list:
-/usr/include/c++/16/bits/erase_if.h:
 /usr/include/c++/16/bits/basic_string.h:
-/usr/include/c++/16/ext/alloc_traits.h:
-/usr/include/c++/16/bits/alloc_traits.h:
-/usr/include/c++/16/bits/stl_construct.h:
 /usr/include/c++/16/ext/string_conversions.h:
 /usr/include/c++/16/cstdlib:
 /usr/include/stdlib.h:
 /usr/include/bits/waitflags.h:
 /usr/include/bits/waitstatus.h:
 /usr/include/sys/types.h:
-/usr/include/bits/types/clock_t.h:
-/usr/include/bits/types/clockid_t.h:
-/usr/include/bits/types/time_t.h:
-/usr/include/bits/types/timer_t.h:
 /usr/include/bits/stdint-intn.h:
 /usr/include/endian.h:
 /usr/include/bits/byteswap.h:
@@ -393,15 +470,6 @@ include/Music.h:
 /usr/include/sys/select.h:
 /usr/include/bits/select.h:
 /usr/include/bits/types/sigset_t.h:
-/usr/include/bits/types/__sigset_t.h:
-/usr/include/bits/types/struct_timeval.h:
-/usr/include/bits/types/struct_timespec.h:
-/usr/include/bits/pthreadtypes.h:
-/usr/include/bits/thread-shared-types.h:
-/usr/include/bits/pthreadtypes-arch.h:
-/usr/include/bits/atomic_wide_counter.h:
-/usr/include/bits/struct_mutex.h:
-/usr/include/bits/struct_rwlock.h:
 /usr/include/alloca.h:
 /usr/include/bits/stdlib-float.h:
 /usr/include/c++/16/bits/std_abs.h:
@@ -421,9 +489,10 @@ include/Music.h:
 /usr/include/asm-generic/errno-base.h:
 /usr/include/bits/types/error_t.h:
 /usr/include/c++/16/bits/charconv.h:
-/usr/include/c++/16/bits/functional_hash.h:
-/usr/include/c++/16/bits/hash_bytes.h:
 /usr/include/c++/16/bits/basic_string.tcc:
+include/Component.h:
+include/Rect.h:
+include/Music.h:
 include/SDL_include.h:
 /usr/include/SDL2/SDL_mixer.h:
 /usr/include/SDL2/SDL_stdinc.h:
@@ -438,7 +507,6 @@ include/SDL_include.h:
 /usr/include/bits/posix1_lim.h:
 /usr/include/bits/local_lim.h:
 /usr/include/linux/limits.h:
-/usr/include/bits/pthread_stack_min-dynamic.h:
 /usr/include/bits/posix2_lim.h:
 /usr/include/bits/xopen_lim.h:
 /usr/include/bits/uio_lim.h:
@@ -472,69 +540,7 @@ include/SDL_include.h:
 /usr/include/SDL2/SDL_thread.h:
 /usr/include/SDL2/SDL_atomic.h:
 /usr/include/SDL2/SDL_version.h:
-include/GameObject.h:
-include/Component.h:
-include/Rect.h:
-/usr/include/c++/16/vector:
-/usr/include/c++/16/bits/stl_uninitialized.h:
-/usr/include/c++/16/bits/stl_vector.h:
-/usr/include/c++/16/bits/stl_bvector.h:
-/usr/include/c++/16/bits/vector.tcc:
-/usr/include/c++/16/memory:
-/usr/include/c++/16/bits/stl_tempbuf.h:
-/usr/include/c++/16/bits/stl_raw_storage_iter.h:
-/usr/include/c++/16/bits/align.h:
-/usr/include/c++/16/bit:
-/usr/include/c++/16/bits/uses_allocator.h:
-/usr/include/c++/16/bits/unique_ptr.h:
-/usr/include/c++/16/tuple:
-/usr/include/c++/16/bits/invoke.h:
-/usr/include/c++/16/bits/shared_ptr.h:
-/usr/include/c++/16/bits/shared_ptr_base.h:
-/usr/include/c++/16/typeinfo:
-/usr/include/c++/16/bits/allocated_ptr.h:
-/usr/include/c++/16/bits/refwrap.h:
-/usr/include/c++/16/ext/aligned_buffer.h:
-/usr/include/c++/16/ext/atomicity.h:
-/usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr.h:
-/usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr-default.h:
-/usr/include/pthread.h:
-/usr/include/sched.h:
-/usr/include/bits/sched.h:
-/usr/include/linux/sched/types.h:
-/usr/include/linux/types.h:
-/usr/include/asm/types.h:
-/usr/include/asm-generic/types.h:
-/usr/include/asm-generic/int-ll64.h:
-/usr/include/asm/bitsperlong.h:
-/usr/include/asm-generic/bitsperlong.h:
-/usr/include/linux/posix_types.h:
-/usr/include/linux/stddef.h:
-/usr/include/asm/posix_types.h:
-/usr/include/asm/posix_types_64.h:
-/usr/include/asm-generic/posix_types.h:
-/usr/include/bits/types/struct_sched_param.h:
-/usr/include/bits/cpu-set.h:
-/usr/include/time.h:
-/usr/include/bits/time.h:
-/usr/include/bits/timex.h:
-/usr/include/bits/types/struct_tm.h:
-/usr/include/bits/types/struct_itimerspec.h:
-/usr/include/bits/setjmp.h:
-/usr/include/bits/types/struct___jmp_buf_tag.h:
-/usr/include/c++/16/x86_64-pc-linux-gnu/bits/atomic_word.h:
-/usr/include/sys/single_threaded.h:
-/usr/include/c++/16/ext/concurrence.h:
-/usr/include/c++/16/exception:
-/usr/include/c++/16/bits/exception_ptr.h:
-/usr/include/c++/16/bits/cxxabi_init_exception.h:
-/usr/include/c++/16/bits/nested_exception.h:
-/usr/include/c++/16/bits/shared_ptr_atomic.h:
-/usr/include/c++/16/bits/atomic_base.h:
-/usr/include/c++/16/bits/atomic_lockfree_defines.h:
-/usr/include/c++/16/backward/auto_ptr.h:
-include/SpriteRenderer.h:
-include/Sprite.h:
+include/InputManager.h:
 /usr/include/SDL2/SDL.h:
 /usr/include/SDL2/SDL_main.h:
 /usr/include/SDL2/SDL_assert.h:
@@ -681,18 +687,31 @@ include/Sprite.h:
 /usr/include/SDL2/SDL_timer.h:
 /usr/include/SDL2/SDL_locale.h:
 /usr/include/SDL2/SDL_misc.h:
-/usr/include/SDL2/SDL_image.h:
-/usr/include/SDL2/SDL.h:
-include/TileMap.h:
-include/TileSet.h:
-include/Zombie.h:
-include/Sound.h:
-include/Timer.h:
-include/Camera.h:
-include/Vec2.h:
-include/InputManager.h:
 /usr/include/c++/16/unordered_map:
 /usr/include/c++/16/bits/unordered_map.h:
 /usr/include/c++/16/bits/hashtable.h:
 /usr/include/c++/16/bits/hashtable_policy.h:
 /usr/include/c++/16/bits/enable_special_members.h:
+include/Camera.h:
+include/Vec2.h:
+include/TileMap.h:
+include/TileSet.h:
+include/Sprite.h:
+/usr/include/SDL2/SDL_image.h:
+/usr/include/SDL2/SDL.h:
+include/TileSet.h:
+include/Zombie.h:
+include/Sound.h:
+include/Timer.h:
+include/Character.h:
+/usr/include/c++/16/queue:
+/usr/include/c++/16/deque:
+/usr/include/c++/16/bits/stl_deque.h:
+/usr/include/c++/16/bits/deque.tcc:
+/usr/include/c++/16/bits/stl_heap.h:
+/usr/include/c++/16/bits/stl_queue.h:
+include/PlayerController.h:
+/usr/include/c++/16/algorithm:
+/usr/include/c++/16/bits/stl_algo.h:
+/usr/include/c++/16/bits/algorithmfwd.h:
+/usr/include/c++/16/bits/uniform_int_dist.h:

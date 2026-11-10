@@ -1,76 +1,57 @@
+// src/Animator.cpp
 #include "Animator.h"
 #include "GameObject.h"
 #include "SpriteRenderer.h"
 
-Animator::Animator(GameObject& associated) : Component(associated)
-{
-    frameStart = 0;
-    frameEnd = 0;
-    frameTime = 0;
-    currentFrame = 0;
-    timeElapsed = 0;
-}
+Animator::Animator(GameObject& associated)
+    : Component(associated), frameStart(0), frameEnd(0),
+      currentFrame(0), frameTime(0.0f), timeElapsed(0.0f), current("") {}
 
-void Animator::Update(float dt)
-{
-    if (frameTime <= 0.0f || dt <= 0.0f) return;
+Animator::~Animator() {}
 
-    timeElapsed += dt;
-    
-    bool frameChanged = false;
-
-    while (timeElapsed >= frameTime)
-    {
-        currentFrame++;
-        timeElapsed -= frameTime;
-        frameChanged = true;
-        if (currentFrame > frameEnd) currentFrame = frameStart;
-    }
-
-    if (currentFrame > frameEnd)
-    {
-        currentFrame = frameStart;
-    }
-
-    if (frameChanged)
-    {
-        SpriteRenderer* sprite = associated.GetComponent<SpriteRenderer>();
-        if (sprite != nullptr)
-        {
-            sprite->SetFrame(currentFrame);
+void Animator::Update(float dt) {
+    if (frameTime != 0.0f) {
+        timeElapsed += dt;
+        if (timeElapsed > frameTime) {
+            currentFrame++;
+            timeElapsed -= frameTime;
+            if (currentFrame > frameEnd) {
+                currentFrame = frameStart;
+            }
+            SpriteRenderer* sr = static_cast<SpriteRenderer*>(associated.GetComponent("SpriteRenderer"));
+            if (sr) {
+                sr->SetFrame(currentFrame, animations[current].flip);
+            }
         }
     }
 }
 
-void Animator::Render()
-{
+void Animator::Render() {}
+
+bool Animator::Is(std::string type) {
+    return type == "Animator";
 }
 
-void Animator::SetAnimation(std::string name)
-{
+void Animator::SetAnimation(std::string name) {
+    if (current == name) {
+        return;
+    }
     auto it = animations.find(name);
-    
-    if (it != animations.end())
-    {
+    if (it != animations.end()) {
         frameStart = it->second.frameStart;
         frameEnd = it->second.frameEnd;
         frameTime = it->second.frameTime;
-        
         currentFrame = frameStart;
-        timeElapsed = 0;
+        timeElapsed = 0.0f;
+        current = name;
 
-        SpriteRenderer* sprite = associated.GetComponent<SpriteRenderer>();
-        if (sprite != nullptr)
-        {
-            sprite->SetFrame(currentFrame);
+        SpriteRenderer* sr = static_cast<SpriteRenderer*>(associated.GetComponent("SpriteRenderer"));
+        if (sr) {
+            sr->SetFrame(currentFrame, it->second.flip);
         }
     }
 }
 
-void Animator::AddAnimation(std::string name, Animation anim)
-{
-    if (animations.find(name) == animations.end())
-    {
-        animations.insert({name, anim});
-    }
+void Animator::AddAnimation(std::string name, Animation anim) {
+    animations[name] = anim;
 }

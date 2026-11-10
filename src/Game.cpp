@@ -46,7 +46,7 @@ Game::Game(std::string title, int width, int height)
         	throw std::runtime_error(SDL_GetError());
         	
         state = new State();
-        frameStart = SDL_GetTicks();
+        //frameStart = SDL_GetTicks();
         
     } catch (...) {
         Resources::ClearSounds();
@@ -88,24 +88,21 @@ SDL_Renderer* Game::GetRenderer()
     return renderer; 
 }
 
-void Game::Run() 
-{
-    frameStart = SDL_GetTicks();
-    while (state && !state->QuitRequested()) 
-    {
+// Trecho de src/Game.cpp
+void Game::Run() {
+    state->Start();
+    while (!state->QuitRequested()) {
         CalculateDeltaTime();
         InputManager::GetInstance().Update();
-        state->Update(GetDeltaTime());
+        state->Update(dt);
         SDL_RenderClear(renderer);
         state->Render();
         SDL_RenderPresent(renderer);
         SDL_Delay(33);
     }
-    delete state;
-    state = nullptr;
-    Resources::ClearSounds();
-    Resources::ClearMusics();
     Resources::ClearImages();
+    Resources::ClearMusics();
+    Resources::ClearSounds();
 }
 
 void Game::CalculateDeltaTime()
